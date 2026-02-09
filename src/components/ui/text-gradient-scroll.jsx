@@ -9,6 +9,8 @@ function useGradientScroll() {
   return context;
 }
 
+const isMobile = typeof window !== 'undefined' ? window.innerWidth < 768 : false;
+
 const TextGradientScroll = memo(function TextGradientScroll({
   text,
   className,
@@ -22,9 +24,11 @@ const TextGradientScroll = memo(function TextGradientScroll({
   });
 
   const words = text.split(" ");
+  // Force word type on mobile to reduce DOM nodes and animation hooks
+  const effectiveType = isMobile ? "word" : type;
 
   return (
-    <TextGradientScrollContext.Provider value={{ textOpacity, type }}>
+    <TextGradientScrollContext.Provider value={{ textOpacity, type: effectiveType }}>
       <p ref={ref} className={cn("relative flex m-0 flex-wrap gap-x-1.5 gap-y-0", className)}>
         {words.map((word, i) => {
           const start = i / words.length;

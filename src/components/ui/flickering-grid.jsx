@@ -64,7 +64,7 @@ export const FlickeringGrid = memo(({
 
     // Detection for mobile or low-power devices
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    const fps = isMobile ? 15 : 30; // 15 FPS on mobile to save CPU/GPU
+    const fps = isMobile ? 8 : 30; // Further reduced to 8 FPS on mobile
     const interval = 1000 / fps;
 
     let isVisible = true;

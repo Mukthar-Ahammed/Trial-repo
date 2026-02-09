@@ -130,7 +130,7 @@ function WhoAreWeSection() {
                         />
                         {!isMobile && (
                             <div
-                                className="absolute top-0 bottom-0 right-0 z-0 translate-y-[2vh] motion-safe:animate-fade-in"
+                                className="absolute top-0 bottom-0 right-0 z-0 translate-y-[2vh] motion-safe:animate-fade-in hero-logo-mask"
                                 style={{
                                     ...maskStyle,
                                     animation: 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
@@ -199,6 +199,8 @@ function WhoAreWeSection() {
                             alt=""
                             className="whoarewe-ellipse-image"
                             src={ellipseImg}
+                            loading="lazy"
+                            decoding="async"
                         />
                     </div>
                 </section>
@@ -213,7 +215,7 @@ function WhoAreWeSection() {
                     <div className="whoarewe-continuation-top-row">
                         <div className="whoarewe-continuation-left">
                             <div className="whoarewe-left-image-glow"></div>
-                            <img src={leftImage} alt="" className="whoarewe-left-image" />
+                            <img src={leftImage} alt="" className="whoarewe-left-image" loading="lazy" decoding="async" />
                         </div>
 
                         <div className="whoarewe-continuation-right">
@@ -275,7 +277,7 @@ function WhoAreWeSection() {
                         {/* We Think Card */}
                         <div className="whoarewe-image-card">
                             <div className="whoarewe-image-card-front">
-                                <img src={weThinkImage} alt="We Think" className="whoarewe-image-card-img" />
+                                <img src={weThinkImage} alt="We Think" className="whoarewe-image-card-img" loading="lazy" decoding="async" />
                                 <p className="whoarewe-image-card-text">We Think</p>
                             </div>
                             <div className="whoarewe-image-card-back">
@@ -290,7 +292,7 @@ function WhoAreWeSection() {
                         {/* We Build Card */}
                         <div className="whoarewe-image-card">
                             <div className="whoarewe-image-card-front">
-                                <img src={weBuildImage} alt="We Build" className="whoarewe-image-card-img" />
+                                <img src={weBuildImage} alt="We Build" className="whoarewe-image-card-img" loading="lazy" decoding="async" />
                                 <p className="whoarewe-image-card-text">We Build</p>
                             </div>
                             <div className="whoarewe-image-card-back">
@@ -305,7 +307,7 @@ function WhoAreWeSection() {
                         {/* We Stay Card */}
                         <div className="whoarewe-image-card">
                             <div className="whoarewe-image-card-front">
-                                <img src={weStayImage} alt="We Stay" className="whoarewe-image-card-img" />
+                                <img src={weStayImage} alt="We Stay" className="whoarewe-image-card-img" loading="lazy" decoding="async" />
                                 <p className="whoarewe-image-card-text">We Stay</p>
                             </div>
                             <div className="whoarewe-image-card-back">
@@ -333,7 +335,7 @@ function WhoAreWeSection() {
                         <div className="whoarewe-founders-grid">
                             <div className="whoarewe-founder-card">
                                 <div className="whoarewe-founder-front">
-                                    <img src={founderEyalImage} alt="Pradeep Menon" className="whoarewe-founder-image" />
+                                    <img src={founderEyalImage} alt="Pradeep Menon" className="whoarewe-founder-image" loading="lazy" decoding="async" />
                                     <div className="whoarewe-founder-gradient"></div>
                                     <h3 className="whoarewe-founder-name">Pradeep Menon</h3>
                                 </div>
@@ -352,7 +354,7 @@ function WhoAreWeSection() {
                             </div>
                             <div className="whoarewe-founder-card">
                                 <div className="whoarewe-founder-front">
-                                    <img src={founderPradeepImage} alt="Eyal Agmoni" className="whoarewe-founder-image whoarewe-founder-image-adjust" />
+                                    <img src={founderPradeepImage} alt="Eyal Agmoni" className="whoarewe-founder-image whoarewe-founder-image-adjust" loading="lazy" decoding="async" />
                                     <div className="whoarewe-founder-gradient"></div>
                                     <h3 className="whoarewe-founder-name">Eyal Agmoni</h3>
                                 </div>
