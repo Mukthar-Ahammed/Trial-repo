@@ -1,17 +1,17 @@
 import React from 'react';
 import BlogPost from './BlogPost';
 import image from '../assets/blog_founders.png';
-import s1 from '../assets/ Images/blog/Section_1.webp';
-import s2 from '../assets/ Images/blog/Section_2.webp';
-import s3 from '../assets/ Images/blog/Section_3.webp';
-import s3_1 from '../assets/ Images/blog/Section_3.1.webp';
-import s4_1 from '../assets/ Images/blog/Section_4.1.webp';
-import s4 from '../assets/ Images/blog/Section_4.webp';
-import s5_1 from '../assets/ Images/blog/Section_5.1.webp';
-import s5_f from '../assets/ Images/blog/Founders_notes_s5.webp';
-import s6_1 from '../assets/ Images/blog/Section_6.1.webp';
-import s6 from '../assets/ Images/blog/Section_6.webp';
-import s5_1_f from '../assets/ Images/blog/s5.1_f.png';
+import s1 from '../assets/Images/blog/Section_1.webp';
+import s2 from '../assets/Images/blog/Section_2.webp';
+import s3 from '../assets/Images/blog/Section_3.webp';
+import s3_1 from '../assets/Images/blog/Section_3.1.webp';
+import s4_1 from '../assets/Images/blog/Section_4.1.webp';
+import s4 from '../assets/Images/blog/Section_4.webp';
+import s5_1 from '../assets/Images/blog/Section_5.1.webp';
+import s5_f from '../assets/Images/blog/Founders_notes_s5.webp';
+import s6_1 from '../assets/Images/blog/Section_6.1.webp';
+import s6 from '../assets/Images/blog/Section_6.webp';
+import s5_1_f from '../assets/Images/blog/s5.1_f.png';
 
 const BlogFoundersNote = () => {
     const content = (

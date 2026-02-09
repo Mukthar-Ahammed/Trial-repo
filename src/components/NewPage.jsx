@@ -5,7 +5,7 @@ import './AboutSection.css'
 import './ProductsSection.css'
 import Hero from './Hero'
 import aboutLogo from '../assets/about logo .png'
-import aboutLeft from '../assets/ Images/Web Images/HOMEPAGE/Top Right.jpg'
+import aboutLeft from '../assets/Images/Web Images/HOMEPAGE/Top Right.jpg'
 
 // Lazy load below-the-fold sections
 const ProductsSection = lazy(() => import('./ProductsSection'));

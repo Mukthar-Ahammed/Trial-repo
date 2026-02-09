@@ -1,12 +1,12 @@
 import React from 'react';
 import BlogPost from './BlogPost';
 import image from '../assets/blog_blueprint.png';
-import image1 from '../assets/ Images/blog/S1.png';
-import image2 from '../assets/ Images/blog/S2.png';
-import image3 from '../assets/ Images/blog/S3.png';
-import image4 from '../assets/ Images/blog/S4.png';
-import image5 from '../assets/ Images/blog/S5.png';
-import image6 from '../assets/ Images/blog/S6.png';
+import image1 from '../assets/Images/blog/S1.png';
+import image2 from '../assets/Images/blog/S2.png';
+import image3 from '../assets/Images/blog/S3.png';
+import image4 from '../assets/Images/blog/S4.png';
+import image5 from '../assets/Images/blog/S5.png';
+import image6 from '../assets/Images/blog/S6.png';
 
 const BlogAgenticBlueprint = () => {
     const content = (
