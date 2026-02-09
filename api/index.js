@@ -2,28 +2,40 @@ import express from 'express';
 import path from 'path';
 import os from 'os';
 
-const root = process.cwd();
-const distPath = path.join(root, 'dist');
+// Use fileURLToPath to get __dirname in ES modules
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// In Vercel, the dist folder is at the root, which is one level up from /api
+const distPath = path.join(__dirname, '..', 'dist');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.static(distPath, {
-    maxAge: 0,
+    maxAge: '1d', // Better caching for assets
     etag: true,
 }));
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(distPath, 'index.html'));
-});
+import fs from 'fs';
 
 app.get('*', (req, res) => {
     const indexPath = path.join(distPath, 'index.html');
-    res.sendFile(indexPath, (err) => {
-        if (err) {
-            console.error('Error sending index.html:', err);
-            res.status(500).send('Server Error: File not found in dist folder. Please ensure the build completed successfully.');
-        }
-    });
+    console.log('Probing for index.html at:', indexPath);
+
+    if (fs.existsSync(indexPath)) {
+        res.sendFile(indexPath);
+    } else {
+        console.error('DIAGNOSTIC: index.html is missing!');
+        // List files in the root to help debug
+        const rootFiles = fs.readdirSync(process.cwd());
+        res.status(404).json({
+            error: "index.html not found",
+            checkedPath: indexPath,
+            cwd: process.cwd(),
+            rootFiles: rootFiles
+        });
+    }
 });
 
 function getLocalIP() {
