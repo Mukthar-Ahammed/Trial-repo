@@ -3,8 +3,8 @@ import { flushSync } from 'react-dom';
 import { useLocation } from 'react-router-dom';
 import HighVelocityLoader from './HighVelocityLoader';
 
-const MIN_SHOW_MS = 450;
-const MAX_SHOW_MS = 4000;
+const MIN_SHOW_MS = 250;
+const MAX_SHOW_MS = 3000;
 
 const GlobalLoader = () => {
     const location = useLocation();
@@ -20,7 +20,7 @@ const GlobalLoader = () => {
             if (!a || a.getAttribute('href')?.startsWith('/#')) return;
             if (a.origin !== window.location.origin) return;
             if (isInitialLoad) return;
-            flushSync(() => setIsLoading(true));
+            setIsLoading(true);
             document.body.style.overflow = 'hidden';
         };
         document.addEventListener('click', handleClick, true);
