@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 109.55 96.55">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke: #d9f1a3;
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-5 {
+        stroke-width: 1.54px;
+      }
+
+      .cls-6 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-3 {
+        opacity: .6;
+      }
+
+      .cls-3, .cls-4, .cls-5 {
+        isolation: isolate;
+        stroke: #fff;
+      }
+
+      .cls-7 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-4 {
+        opacity: .4;
+      }
+
+      .cls-5 {
+        opacity: .8;
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-1" x=".34" y=".21" width="109" height="96"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="-481.94" y1="-6898.48" x2="-481.94" y2="-6934.16" gradientTransform="translate(564 -6898.27) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#dbeeae"/>
+      <stop offset="1" stop-color="#dbeeae" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g class="cls-7">
+      <g>
+        <path class="cls-4" d="M27.49,95.78c14.76,0,26.72-12.02,26.72-26.85s-11.96-26.85-26.72-26.85S.77,54.1.77,68.93s11.96,26.85,26.72,26.85Z"/>
+        <path class="cls-3" d="M44.69,81.88c14.76,0,26.72-12.02,26.72-26.85s-11.96-26.85-26.72-26.85-26.72,12.02-26.72,26.85,11.96,26.85,26.72,26.85Z"/>
+        <path class="cls-5" d="M63.75,68.36c14.76,0,26.72-12.02,26.72-26.85s-11.96-26.85-26.72-26.85-26.72,12.02-26.72,26.85,11.96,26.85,26.72,26.85Z"/>
+        <path class="cls-6" d="M82.06,55.03c15.07,0,27.28-12.27,27.28-27.41S97.13.21,82.06.21s-27.28,12.27-27.28,27.41,12.21,27.41,27.28,27.41Z"/>
+        <path class="cls-2" d="M82.06,54.47c14.76,0,26.72-12.02,26.72-26.85S96.82.77,82.06.77s-26.72,12.02-26.72,26.85,11.96,26.85,26.72,26.85Z"/>
+      </g>
+    </g>
+  </g>
+</svg>

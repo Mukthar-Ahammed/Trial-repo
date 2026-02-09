@@ -1,0 +1,30 @@
+.mobile-test-page {
+  min-height: 100vh;
+  background-color: #020f14;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.mobile-test-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.mobile-test-title {
+  font-family: 'Stage Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0;
+  text-align: center;
+}
+
+.mobile-test-card-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

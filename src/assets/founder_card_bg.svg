@@ -1,0 +1,62 @@
+<svg viewBox="0 0 937.0664 443" fill="none" xmlns="http://www.w3.org/2000/svg" x="0" y="0"><defs><mask id="mask0_79_3255" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="-33.0664" y="-17" width="460" height="460">
+<rect id="Rectangle 47" width="460" height="460" fill="white" x="-33.0664" y="-17"/>
+</mask><mask id="mask1_79_3255" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="504.9336" y="-17" width="461" height="460">
+<rect id="Rectangle 47_2" x="505.0016" width="460" height="460" fill="white" y="-17"/>
+</mask><filter id="filter0_f_79_3255" x="-200.4124" y="-130.3" width="720.678" height="796.588" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="30" result="effect1_foregroundBlur_79_3255"/>
+</filter><filter id="filter1_f_79_3255" x="-25.64452" y="-280.356" width="662.254" height="551.497" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="30" result="effect1_foregroundBlur_79_3255"/>
+</filter><filter id="filter2_f_79_3255" x="349.74260000000004" y="-175.676" width="786.852" height="806.894" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="30" result="effect1_foregroundBlur_79_3255"/>
+</filter><filter id="filter3_f_79_3255" x="522.3575999999999" y="-298.357" width="662.254" height="551.497" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="30" result="effect1_foregroundBlur_79_3255"/>
+</filter><linearGradient id="paint0_linear_79_3255" x1="207.3406" y1="85.986" x2="108.9766" y2="330.004" gradientUnits="userSpaceOnUse">
+<stop stop-color="#00B068"/>
+<stop offset="1" stop-color="#008C56"/>
+</linearGradient><linearGradient id="paint1_linear_79_3255" x1="332.5586" y1="5.4999" x2="198.1126" y2="464.174" gradientUnits="userSpaceOnUse">
+<stop stop-color="#01121A"/>
+<stop offset="1" stop-color="#41F33B"/>
+<stop offset="1" stop-color="#00B068"/>
+</linearGradient><linearGradient id="paint2_linear_79_3255" x1="766.5226" y1="58.46510000000001" x2="701.5426" y2="363.824" gradientUnits="userSpaceOnUse">
+<stop stop-color="#00B068"/>
+<stop offset="1" stop-color="#008C56"/>
+</linearGradient><linearGradient id="paint3_linear_79_3255" x1="880.5605999999999" y1="-12.50061" x2="746.1146" y2="446.174" gradientUnits="userSpaceOnUse">
+<stop stop-color="#01121A"/>
+<stop offset="1" stop-color="#41F33B"/>
+<stop offset="1" stop-color="#00B068"/>
+</linearGradient></defs><g id="Group 63">
+<g id="Mask group">
+<mask id="mask0_79_3255" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="460" height="460">
+<rect id="Rectangle 47" width="460" height="460" fill="white"/>
+</mask>
+<g mask="url(#mask0_79_3255)">
+<g id="Ellipse 30" filter="url(#filter0_f_79_3255)">
+<path d="M455.3406,373c-29.749,156.733 -186.047,258.702 -349.102,227.754c-163.0549,-30.949 -271.486,-326.021 -241.737,-482.754c29.7483,-156.7333 186.4109,-210.9113 349.466,-179.963c163.055,30.9484 271.121,278.23 241.373,434.963z" fill="url(#paint0_linear_79_3255)"/>
+</g>
+<g id="Ellipse 30_2" filter="url(#filter1_f_79_3255)">
+<path d="M558.2146,-154.648c42.939,82.4853 15.07,240.049 -130.156,315.648c-145.226,75.599 -338.062,62.985 -381.0001,-19.5c-42.9383,-82.485 25.2281,-233.0171 170.4541,-308.616c145.226,-75.599 297.764,-70.017 340.702,12.468z" fill="url(#paint1_linear_79_3255)"/>
+</g>
+</g>
+</g>
+<g id="Mask group_2">
+<mask id="mask1_79_3255" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="538" y="0" width="461" height="460">
+<rect id="Rectangle 47_2" x="538.068" width="460" height="460" fill="white"/>
+</mask>
+<g mask="url(#mask1_79_3255)">
+<g id="Ellipse 30_3" filter="url(#filter2_f_79_3255)">
+<ellipse cx="743.1676" cy="227.771" rx="332.982" ry="343.755" transform="rotate(10.7471, 743.1676, 227.771)" fill="url(#paint2_linear_79_3255)"/>
+</g>
+<g id="Ellipse 30_4" filter="url(#filter3_f_79_3255)">
+<path d="M1106.2136,-172.648c42.94,82.4848 15.07,240.0487 -130.15,315.648c-145.229,75.598 -338.065,62.984 -381.003,-19.501c-42.938,-82.4845 25.228,-233.0166 170.454,-308.615c145.226,-75.599 297.759,-70.017 340.699,12.468z" fill="url(#paint3_linear_79_3255)"/>
+</g>
+</g>
+</g>
+</g></svg>

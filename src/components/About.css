@@ -1,0 +1,254 @@
+.about-section {
+    position: relative;
+    width: 100%;
+    padding: var(--spacing-2xl) 0;
+    overflow: hidden;
+    z-index: 1;
+    height: 115vh;
+}
+
+.about-container {
+    width: 100%;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 50rem;
+}
+
+/* Left Column */
+.about-left-column {
+    position: relative;
+    padding: 3rem 6rem 3rem 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.about-title {
+    color: #FFFFFF;
+    font-family: "Stage Grotesk", sans-serif;
+    font-size: 5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.1;
+    margin: 0 0 5rem 0;
+    letter-spacing: -0.02em;
+}
+
+.about-title-green {
+    color: #A6F63B;
+}
+
+.about-bottom {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    align-items: flex-end;
+}
+
+/* Small Green Image */
+.about-image-abstract {
+    width: 12.5rem;
+    height: 12.5rem;
+    flex-shrink: 0;
+    position: relative;
+    bottom: 3.125rem;
+    left: 1.25rem;
+}
+
+.about-green-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Text Content */
+.about-text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 27.5rem;
+    margin-bottom: 2rem;
+}
+
+.about-tagline {
+    color: rgba(255, 255, 255, 0.8);
+    font-family: "Stage Grotesk", sans-serif;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.about-description {
+    color: rgba(255, 255, 255, 0.6);
+    font-family: "Stage Grotesk", sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.about-promise {
+    color: rgba(255, 255, 255, 0.6);
+    font-family: "Stage Grotesk", sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.6;
+    margin: 0 0 1rem 0;
+}
+
+.btn-see-work {
+    display: inline-flex;
+    padding: 0.75rem 2rem;
+    justify-content: center;
+    align-items: center;
+    background: #A6F63B;
+    color: #000000;
+    border: none;
+    font-family: "Stage Grotesk", sans-serif;
+    font-size: 0.8125rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+}
+
+.btn-see-work:hover {
+    background: rgba(166, 246, 59, 0.9);
+    transform: translateY(-0.125rem);
+}
+
+/* Right Column - Large Image */
+.about-image-container {
+    position: relative;
+    top: 7.6875rem;
+    left: 9.375rem;
+    width: 39%;
+    max-width: 22.625rem;
+    aspect-ratio: 346 / 376;
+    overflow: hidden;
+    border-radius: 0.125rem;
+    right: 5rem;
+    top: 8.4375rem;
+}
+
+.about-office-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Responsive Design */
+@media (max-width: 75rem) {
+    .about-left-column {
+        padding: 3rem 4rem;
+    }
+
+    .about-title {
+        font-size: 4rem;
+    }
+
+    .about-office-image {
+        width: 100%;
+        height: 100%;
+        max-width: 20.25rem;
+        max-height: 22.375rem;
+    }
+}
+
+@media (max-width: 60.5rem) {
+    .about-container {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .about-left-column {
+        padding: 3rem 2rem;
+    }
+
+    .about-title {
+        font-size: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    .about-bottom {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: flex-start;
+    }
+
+    .about-green-image-wrapper {
+        width: 9.375rem;
+        height: 9.375rem;
+    }
+
+    .about-text-content {
+        max-width: 100%;
+    }
+
+    .about-right-column {
+        height: 25rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+    }
+
+    .about-office-image {
+        width: 100%;
+        height: auto;
+        max-width: 20.25rem;
+    }
+}
+
+@media (max-width: 40rem) {
+    .about-left-column {
+        padding: 2rem 1.5rem;
+    }
+
+    .about-title {
+        font-size: 2.25rem;
+    }
+
+    .about-tagline {
+        font-size: 1rem;
+    }
+
+    .about-description,
+    .about-promise {
+        font-size: 0.875rem;
+    }
+
+    .about-green-image-wrapper {
+        width: 7.5rem;
+        height: 7.5rem;
+    }
+
+    .about-office-image {
+        max-width: 17.5rem;
+    }
+}
+
+/* Large screens (≥1920px) */
+@media (min-width: 120rem) {
+    .about-title {
+        font-size: 4.5rem;
+        left: 3.0625rem;
+        position: relative;
+        margin-top: 4rem;
+    }
+
+    .about-image-container {
+        position: relative;
+        top: 1.6875rem;
+        left: 9.9375rem;
+    }
+}

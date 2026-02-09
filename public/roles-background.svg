@@ -1,0 +1,12 @@
+<svg viewBox="0 0 1363.2622 650" fill="none" xmlns="http://www.w3.org/2000/svg" id="3230f63f" x="0" y="0"><g id="Group 38" data-node-id="26:204"><g id="Group 26" data-node-id="26:189">
+<rect id="Rectangle 35" data-node-id="26:190" x="43.36099999999999" y="0.047100000000000364" width="1320.3" height="650.146" fill="black"/>
+</g><g id="Ellipse 19" data-node-id="26:192" filter="url(#filter0_f_26_204)">
+<ellipse cx="668.5" cy="402.8261" rx="668.41" ry="212.832" fill="url(#paint0_linear_26_204)"/>
+</g></g><defs><filter id="filter0_f_26_204" x="-400" y="-210.0959" width="2137" height="1225.84" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="200" result="effect1_foregroundBlur_26_204"/>
+</filter><linearGradient id="paint0_linear_26_204" x1="668.5899999999999" y1="190.08309999999997" x2="668.5899999999999" y2="615.7481" gradientUnits="userSpaceOnUse">
+<stop stop-color="#001117"/>
+<stop offset="1" stop-color="#013445"/>
+</linearGradient></defs></svg>

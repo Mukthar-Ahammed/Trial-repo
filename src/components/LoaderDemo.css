@@ -1,0 +1,15 @@
+.loader-demo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+.loader-demo-text {
+  font-family: "Stage Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  font-size: var(--font-size-lg);
+  color: var(--accent-green);
+  margin: 0;
+  letter-spacing: 0.05em;
+}

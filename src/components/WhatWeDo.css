@@ -1,0 +1,940 @@
+.what-we-do-page {
+    background: #020F14;
+    min-height: 100vh;
+    overflow-x: hidden;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Navbar overrides handled by global Navbar.css */
+
+
+/* Hero Section with Hyperspeed */
+.what-we-do-hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: #020F14;
+}
+
+.hyperspeed-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Static hero background (no Hyperspeed) – avoids flicker on low-end/mobile */
+.what-we-do-hero-static-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: radial-gradient(ellipse 80% 50% at 50% 100%, rgba(3, 179, 195, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse 60% 40% at 50% 120%, rgba(0, 20, 30, 0.9) 0%, transparent 45%),
+                linear-gradient(180deg, #020f14 0%, #000 40%, #020f14 100%);
+    pointer-events: none;
+}
+
+.hero-content-overlay {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.what-we-do-glow {
+    position: absolute;
+    top: 11.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 106.625rem;
+    height: 45.625rem;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #001117 0%, #013445 100%);
+    filter: blur(200px);
+    opacity: 0.77;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.what-we-do-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 7.5rem 0 5rem 0;
+    background: #000;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.what-we-do-container {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@media (min-width: 48rem) {
+    .what-we-do-container {
+        padding: 0 var(--spacing-2xl);
+    }
+}
+
+/* Hero Content */
+.what-we-do-hero {
+    text-align: center;
+    max-width: 156.25rem;
+    padding: 0 2.5rem;
+    pointer-events: auto;
+    bottom: 5rem ;
+    position: relative;
+}
+
+.what-we-do-title {
+    font-family: "Stage Grotesk", sans-serif;
+    font-size: clamp(2rem, 6vw, 4rem);
+    font-weight: 500;
+    color: #ffffff;
+    margin: 0 0 1.5rem 0;
+    line-height: 1.2;
+    text-shadow: 0 0.125rem 1.25rem rgba(0, 0, 0, 0.8);
+    text-transform: capitalize;
+}
+
+.what-we-do-subtitle {
+    font-family: "Blauer Nue", sans-serif;
+    font-size: clamp(0.75rem, 2vw, 1.125rem);
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0 0 3rem 0;
+    line-height: 1.2;
+    max-width: 43.75rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-transform: none;
+}
+
+@media (max-width: 48rem) {
+    .what-we-do-glow {
+        top: -0.125rem;
+        width: 31.625rem;
+        height: 45.625rem;
+    }
+
+    .what-we-do-subtitle {
+        font-size: clamp(0.7rem, 1.5vw, 0.75rem) !important;
+    }
+}
+
+.scroll-to-explore {
+    position: absolute;
+    bottom: 15vh;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: "Stage Grotesk", sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #A6F63B;
+    text-align: center;
+    text-shadow: 0 0 4px #FFF;
+    z-index: 30;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+/* Framework Cards Grid */
+.framework-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-bottom: 5rem;
+    z-index: 3;
+    position: relative;
+    width: 100%;
+    min-width: 0;
+}
+
+@media (min-width: 48rem) {
+    .framework-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+@media (min-width: 64rem) {
+    .framework-grid {
+        gap: 2.5rem;
+    }
+}
+
+.framework-card {
+    background: #0D0D0D;
+    border: 1.1px solid #1e1e1e;
+    border-radius: 0.75rem;
+    padding: 0.6875rem;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: visible;
+    min-height: 13.5625rem;
+    min-width: 0;
+}
+
+.framework-card-inner {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.375rem;
+    padding: 1.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.framework-card:hover {
+    border-color: rgba(166, 246, 59, 0.3);
+    background: #111111;
+    transform: translateY(-2px);
+}
+
+.framework-icon {
+    width: 5.775rem;
+    height: 5.775rem;
+    background: radial-gradient(circle, rgba(166, 246, 59, 0.4) 0%, rgba(166, 246, 59, 0.1) 40%, transparent 70%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-shrink: 0;
+    margin-bottom: 24px;
+    margin-left: -8px;
+}
+
+.framework-icon::after {
+    content: '';
+    position: absolute;
+    inset: -15px;
+    background: radial-gradient(circle, rgba(166, 246, 59, 0.2) 0%, transparent 70%);
+    filter: blur(8px);
+    z-index: -1;
+}
+
+.framework-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 8px rgba(166, 246, 59, 0.5));
+}
+
+.framework-title {
+    font-family: "Stage Grotesk", sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: #ffffff;
+    margin: 0 0 0.75rem 0;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+.framework-description {
+    font-family: "Blauer Nue", sans-serif;
+    font-size: 1.375rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+}
+
+@media (min-width: 64rem) {
+    .framework-description {
+        font-size: 1.25rem;
+    }
+}
+
+/* Glowing effect overlay for framework cards */
+.glowing-effect-overlay {
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    pointer-events: none;
+}
+
+.glow {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.glow::after {
+    content: "";
+    position: absolute;
+    inset: calc(-1 * var(--glowingeffect-border-width, 2px));
+    border-radius: inherit;
+    border: var(--glowingeffect-border-width, 2px) solid transparent;
+    background: var(--gradient);
+    background-attachment: fixed;
+    opacity: var(--active, 0);
+    transition: opacity 300ms ease;
+    -webkit-mask-clip: padding-box, border-box;
+    mask-clip: padding-box, border-box;
+    -webkit-mask-composite: source-in;
+    mask-composite: intersect;
+    -webkit-mask-image:
+        linear-gradient(#0000, #0000),
+        conic-gradient(from calc((var(--start, 0deg) - var(--spread, 45)) * 1deg),
+            #0000 0deg,
+            #fff,
+            #0000 calc(var(--spread, 45) * 2deg));
+    mask-image:
+        linear-gradient(#0000, #0000),
+        conic-gradient(from calc((var(--start, 0deg) - var(--spread, 45)) * 1deg),
+            #0000 0deg,
+            #fff,
+            #0000 calc(var(--spread, 45) * 2deg));
+}
+
+/* Five Intelligences carousel: visible white glow (desktop + mobile) */
+.ai-discovery-card .glowing-effect-overlay,
+.ai-discovery-mobile-card .glowing-effect-overlay {
+    z-index: 1;
+}
+.ai-discovery-card .glowing-effect-overlay .glow::after,
+.ai-discovery-mobile-card .glowing-effect-overlay .glow::after {
+    opacity: max(0.4, var(--active, 0.4)) !important;
+    transition: opacity 0.35s ease;
+}
+
+/* AI Discovery card */
+.ai-discovery-section {
+    margin-top: 5rem;
+    margin-bottom: 11.25rem;
+    position: relative;
+    overflow: visible;
+    z-index: 1;
+    padding-left: var(--spacing-lg, 1rem);
+    padding-right: var(--spacing-lg, 1rem);
+}
+
+@media (min-width: 48rem) {
+    .ai-discovery-section {
+        padding-left: var(--spacing-2xl, 2rem);
+        padding-right: var(--spacing-2xl, 2rem);
+    }
+}
+
+/* Green background glow reused from Why section */
+.ai-discovery-bg-green-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 165rem;
+    height: 65rem;
+    background: radial-gradient(circle, rgba(0, 110, 65, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+    filter: blur(7rem);
+    z-index: -1;
+    pointer-events: none;
+}
+
+@media (max-width: 48rem) {
+    .ai-discovery-bg-green-glow {
+        width: 10rem;
+        height: 3rem;
+        filter: blur(2rem);
+        /* Reduced blur for smaller size */
+    }
+}
+
+.ai-discovery-ellipse-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 56.25rem;
+    height: 37.5rem;
+    background: radial-gradient(ellipse at center, rgba(0, 150, 150, 0.8) 0%, rgba(0, 100, 120, 0.3) 40%, transparent 70%);
+    filter: blur(5rem);
+    opacity: 1;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@media (min-width: 48rem) {
+    .ai-discovery-ellipse-glow {
+        width: 195.25rem;
+        top: 26.25rem;
+        height: 122.1875rem;
+        filter: blur(6.25rem);
+        opacity: 1;
+        z-index: 0;
+    }
+}
+
+.ai-discovery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-top: 2.5rem;
+    position: relative;
+    z-index: 1;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.ai-discovery-section-title {
+    font-family: "Stage Grotesk", sans-serif;
+    font-size: 2.25rem;
+    font-weight: 400;
+    color: #ffffff;
+    margin: 0;
+}
+
+.ai-discovery-section-subtitle {
+    position: relative;
+    font-family: "Stage Grotesk", sans-serif;
+    font-size: 0.9375rem;
+    color: #ffffff;
+    margin: 0;
+    top: 0.625rem;
+    right: 1.25rem;
+}
+
+.ai-discovery-carousel-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    z-index: 1;
+}
+
+.ai-discovery-card {
+    position: relative;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(10, 31, 31, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    overflow: visible;
+    width: 100%;
+    z-index: 1;
+}
+
+.ai-discovery-image-link {
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.ai-discovery-image-link:hover {
+    opacity: 0.9;
+}
+
+.ai-discovery-image-container {
+    position: relative;
+    width: 100%;
+    height: 33.75rem;
+    max-width: 100%;
+    border-radius: 0.625rem 0.625rem 0 0;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.ai-discovery-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.ai-discovery-image-link:hover .ai-discovery-bg-image {
+    transform: scale(1.02);
+}
+
+.ai-discovery-gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(112.55deg, rgba(31, 54, 56, 0.8) 9.37%, rgba(0, 175, 103, 0) 40.17%);
+    mix-blend-mode: multiply;
+    pointer-events: none;
+}
+
+.ai-discovery-title {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    font-family: "Blauer Nue", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #ffffff;
+    text-transform: none;
+    letter-spacing: 0.05em;
+    margin: 0;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.ai-discovery-text-overlay {
+    position: relative;
+    width: 100%;
+    background: rgba(0, 20, 25, 1);
+    padding: 2rem;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+@media (min-width: 64rem) {
+    .ai-discovery-text-overlay {
+        height: 10rem;
+    }
+}
+
+.ai-discovery-text {
+    font-family: "Stage Grotesk", sans-serif;
+    font-size: 2.231875rem;
+    color: #ffffff;
+    line-height: 1.4;
+    margin: 0;
+    font-weight: 400;
+}
+
+.ai-discovery-blog-link {
+    display: inline-block;
+    font-family: "Stage Grotesk", sans-serif;
+    font-size: 1.221875rem;
+    font-weight: 400;
+    font-style: italic;
+    color: #a6f63b;
+    text-decoration: none;
+    padding: 0.5rem 0;
+    transition: all 0.3s ease;
+    width: fit-content;
+}
+
+.ai-discovery-blog-link:hover {
+    color: #ffffff;
+    padding-left: 0.5rem;
+}
+
+.ai-discovery-pagination {
+    position: absolute;
+    bottom: 0.875rem;
+    left: 1.5625rem;
+    display: flex;
+    gap: 0.625rem;
+    z-index: 10;
+}
+
+.ai-discovery-dot {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    background: #4a4a4a;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ai-discovery-dot.active {
+    background: #ffffff;
+}
+
+.ai-discovery-controls {
+    position: absolute;
+    bottom: 0;
+    right: 1.5625rem;
+    display: flex;
+    gap: 0.75rem;
+    z-index: 10;
+}
+
+.ai-discovery-btn {
+    width: 3.25rem;
+    height: 2.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.25rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    background: #1A1A1A;
+    color: #9ca3af;
+}
+
+.ai-discovery-btn:hover {
+    background: #ffffff;
+    color: #0b1b1f;
+}
+
+.ai-discovery-btn svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+/* Responsive: tablet and below (≤768px) */
+@media (max-width: 48rem) {
+    .what-we-do-section {
+        padding: 5rem 0 3.75rem 0;
+    }
+
+    .what-we-do-container {
+        padding: 0 var(--spacing-xl);
+    }
+
+    .what-we-do-title {
+        font-size: 2rem;
+    }
+
+    .framework-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding-left: var(--spacing-lg);
+        padding-right: var(--spacing-lg);
+    }
+
+    .ai-discovery-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+        padding-top: 1.875rem;
+    }
+
+    .ai-discovery-section-title {
+        font-size: 1.75rem;
+    }
+
+    .ai-discovery-section-subtitle {
+        right: 0;
+    }
+
+    .ai-discovery-image-container {
+        height: 26.25rem;
+    }
+
+    .ai-discovery-title {
+        font-size: 1.25rem;
+        top: 1.5rem;
+        left: 1.5rem;
+    }
+
+    .ai-discovery-text-overlay {
+        padding: 1.5rem;
+        gap: 0.75rem;
+    }
+
+    .ai-discovery-text {
+        font-size: 1rem;
+    }
+
+    .ai-discovery-blog-link {
+        font-size: 0.8125rem;
+    }
+
+    .ai-discovery-pagination {
+        left: 0;
+    }
+
+    .ai-discovery-controls {
+        right: 0;
+    }
+
+    .framework-title {
+        font-size: 1.5rem;
+    }
+
+    .framework-description {
+        font-size: 0.8125rem;
+    }
+
+    .framework-card-inner {
+        gap: 0;
+    }
+
+    .framework-icon {
+        width: 4.95rem;
+        height: 4.95rem;
+        margin-bottom: 1.25rem;
+        margin-left: -0.25rem;
+    }
+
+    .framework-icon::after {
+        inset: -0.75rem;
+        filter: blur(0.375rem);
+    }
+
+    .framework-title {
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media (max-width: 30rem) {
+    .what-we-do-title {
+        font-size: 1.5rem;
+    }
+
+    .framework-card {
+        min-height: auto;
+    }
+
+    .ai-discovery-header {
+        padding-top: 1.25rem;
+    }
+
+    .ai-discovery-section-title {
+        font-size: 1.5rem;
+    }
+
+    .ai-discovery-image-container {
+        height: 21.25rem;
+    }
+
+    .ai-discovery-title {
+        font-size: 1.125rem;
+        top: 1.25rem;
+        left: 1.25rem;
+    }
+
+    .ai-discovery-text-overlay {
+        padding: 1.25rem;
+        gap: 0.75rem;
+    }
+
+    .ai-discovery-text {
+        font-size: 1rem;
+    }
+
+    .ai-discovery-blog-link {
+        font-size: 0.75rem;
+    }
+
+    .ai-discovery-pagination {
+        left: 0;
+        bottom: -2.8125rem;
+    }
+
+    .ai-discovery-controls {
+        right: 0;
+        bottom: -3.125rem;
+    }
+
+    .ai-discovery-btn {
+        width: 2.8125rem;
+        height: 2.25rem;
+    }
+}
+
+/* Mobile Scroll Container (New Implementation) */
+.ai-discovery-mobile-scroll {
+    display: none;
+    /* Hidden on desktop by default */
+}
+
+.ai-discovery-desktop-carousel {
+    display: block;
+    /* Visible on desktop by default */
+    position: relative;
+    /* Prevent collapse when exit animation uses position:absolute (rapid nav bug) */
+    min-height: 48rem;
+}
+
+/* Per-card glow (replaces single carousel glow) */
+.ai-discovery-card-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;
+    height: 80%;
+    max-width: 45rem;
+    background: radial-gradient(ellipse at center, rgba(0, 150, 150, 0.5) 0%, rgba(0, 100, 120, 0.2) 45%, transparent 70%);
+    filter: blur(4rem);
+    opacity: 0.85;
+    pointer-events: none;
+    z-index: -1;
+    border-radius: inherit;
+}
+
+@media (max-width: 48rem) {
+    .ai-discovery-desktop-carousel {
+        display: none !important;
+    }
+
+    .ai-discovery-mobile-scroll {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 1rem;
+        padding-bottom: 1.25rem;
+        width: 100%;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .ai-discovery-mobile-scroll::-webkit-scrollbar {
+        display: none;
+    }
+
+    .ai-discovery-mobile-card {
+        flex: 0 0 85%;
+        scroll-snap-align: center;
+        background: #0D0D0D;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 0.75rem;
+        overflow: visible;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        min-width: 0;
+        position: relative;
+    }
+
+    .ai-discovery-mobile-card .ai-discovery-card-glow {
+        width: 100%;
+        height: 60%;
+        max-width: none;
+        filter: blur(2.5rem);
+    }
+
+    .ai-discovery-mobile-scroll {
+        padding-left: var(--spacing-lg, 1rem);
+        padding-right: var(--spacing-lg, 1rem);
+    }
+
+    .ai-discovery-mobile-image-container {
+        width: 100%;
+        height: 12.5rem;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .ai-discovery-mobile-image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .ai-discovery-mobile-image-container .ai-discovery-title {
+        font-size: 1.25rem;
+        top: 1rem;
+        left: 1rem;
+    }
+
+    .ai-discovery-text-overlay {
+        background: #0D0D0D;
+        padding: 1.25rem;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .ai-discovery-controls {
+        display: none !important;
+    }
+
+    .ai-discovery-pagination {
+        position: relative;
+        bottom: 0;
+        margin-top: 1.5rem;
+        width: 100%;
+        justify-content: center;
+        gap: 0.375rem;
+        padding-left: 0;
+    }
+
+    .ai-discovery-dot {
+        width: 2rem;
+        height: 0.1875rem;
+        border-radius: 0.125rem;
+        background: #1B2823;
+        transition: background-color 0.3s ease;
+    }
+
+    .ai-discovery-dot.active {
+        background: #41F33B;
+        width: 2rem;
+    }
+}
+
+@media (max-width: 40rem) {
+    .what-we-do-container {
+        padding: 0;
+    }
+
+    .accelerators-section {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.what-we-do-animated-text {
+    font-family: "Blauer Nue", sans-serif;
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.6;
+    max-width: 59rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0 auto 3rem auto;
+    text-shadow: 0 0 1.875rem rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+@media (min-width: 48rem) {
+    .what-we-do-animated-text {
+        font-size: 1.25rem;
+        line-height: 1.5;
+    }
+}
+
+@media (min-width: 64rem) {
+    .what-we-do-animated-text {
+        font-size: 1.5rem;
+        line-height: 1.4;
+    }
+}
+
+@media (max-width: 48rem) {
+    .what-we-do-animated-text {
+        font-size: 0.75rem;
+        line-height: 1.5;
+        max-width: 100%;
+    }
+}

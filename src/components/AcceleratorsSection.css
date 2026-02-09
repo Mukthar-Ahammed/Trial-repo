@@ -1,0 +1,835 @@
+.accelerators-section {
+  width: 100%;
+  background: #080808;
+  padding: 8.9375rem 0 7.5rem 0;
+  color: #ffffff;
+  position: relative;
+  z-index: 2;
+  height: auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.accelerators-hero,
+.case-hero {
+  max-width: 60rem;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.accelerators-hero h2,
+.case-hero h2 {
+  font-family: 'Stage Grotesk', sans-serif;
+  font-size: 3rem;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.accelerators-hero h2 {
+  margin-bottom: 1rem;
+}
+
+.accelerators-hero p,
+.case-hero p {
+  font-family: 'Stage Grotesk', sans-serif;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.accelerators-text-section {
+  max-width: 60rem;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.accelerators-text-section p {
+  font-family: 'Stage Grotesk', sans-serif;
+  font-size: 2.4375rem;
+  font-weight: 400;
+  margin: 0 0 0.25rem 0;
+  line-height: 1.0;
+  color: #ffffff;
+}
+
+.accelerators-text-section p:nth-child(2) {
+  margin-bottom: 2.5rem;
+}
+
+.accelerators-text-section p:last-child {
+  margin-bottom: 0;
+}
+
+.accelerators-text-section p.green-text {
+  color: #A6F63B;
+}
+
+
+
+.accelerators-text-section p:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.accelerators-text-section p:nth-child(2) {
+  animation-delay: 0.6s;
+}
+
+@keyframes revealText {
+  0% {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+  }
+
+  100% {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.acc-section-glow {
+  position: absolute;
+  width: 37.5rem;
+  height: 38.9375rem;
+  border-radius: 54.875rem;
+  opacity: 0.77;
+  background: linear-gradient(180deg, #001117 0%, #013445 100%);
+  filter: blur(12.5rem);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.acc-glow-left {
+  top: 25%;
+  left: -24.25rem;
+  transform: translateY(-50%);
+}
+
+.acc-glow-right {
+  top: 25%;
+  right: -24.25rem;
+  transform: translateY(-50%);
+}
+
+.case-hero {
+  margin-top: 10rem;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  max-width: 80rem;
+  position: relative;
+  z-index: 1;
+  scroll-margin-top: 7.5rem;
+}
+
+.case-glow {
+  position: absolute;
+  bottom: -25rem;
+  right: -68.75rem;
+  width: 100.75rem;
+  height: 59.75rem;
+  border-radius: 75.75rem;
+  background: linear-gradient(180deg, #001117 0%, #013445 100%);
+  filter: blur(12.5rem);
+  opacity: 0.77;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.case-hero p {
+  color: #ffffff;
+  margin: 0;
+}
+
+.case-hero .highlight {
+  color: #a6f63b;
+}
+
+.case-br-tablet {
+  display: none;
+}
+
+.accelerators-grid {
+  max-width: 80rem;
+  margin: 4.5rem auto 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16.25rem, 1fr));
+  gap: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Accelerator cards with FX (ported from provided Tailwind card) */
+.acc-card-wrap {
+  cursor: pointer;
+  transform: translateZ(0);
+  transition: transform 500ms ease;
+  height: 100%;
+}
+
+.acc-card-wrap:hover {
+  transform: scale(1.05) rotate(-1deg);
+}
+
+.acc-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  border: 0.0625rem solid rgba(255, 255, 255, 0.1);
+  background: rgba(2, 15, 20, 0);
+  backdrop-filter: blur(1.125rem);
+  box-shadow: 0 1.875rem 5rem rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  height: 100%;
+  min-height: 23.75rem;
+  /* Reduced from 450px */
+  display: flex;
+  flex-direction: column;
+}
+
+.acc-card-wrap:hover .acc-card {
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 1.875rem 5.625rem rgba(0, 0, 0, 0.6), 0 0 0 0.0625rem rgba(255, 255, 255, 0.05);
+}
+
+.acc-card-fx {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.acc-fx-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.1));
+  opacity: 0.4;
+  transition: opacity 500ms ease;
+}
+
+.acc-card-wrap:hover .acc-fx-overlay {
+  opacity: 0.6;
+}
+
+.acc-fx-orb {
+  position: absolute;
+  border-radius: 999px;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), transparent);
+  filter: blur(3rem);
+  opacity: 0.3;
+  transition: transform 700ms ease, opacity 700ms ease;
+}
+
+.acc-fx-orb-a {
+  width: 12rem;
+  height: 12rem;
+  left: -5rem;
+  bottom: -5rem;
+  animation: accBounce 2.2s ease-in-out infinite;
+}
+
+.acc-card-wrap:hover .acc-fx-orb-a {
+  opacity: 0.5;
+  transform: scale(1.1);
+}
+
+.acc-fx-orb-b {
+  width: 4rem;
+  height: 4rem;
+  top: 2.5rem;
+  left: 2.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  filter: blur(1.125rem);
+  animation: accPing 1.6s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.acc-fx-orb-c {
+  width: 3rem;
+  height: 3rem;
+  bottom: 4rem;
+  right: 4rem;
+  background: rgba(255, 255, 255, 0.05);
+  filter: blur(0.875rem);
+  animation: accPing 1.6s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.acc-fx-orb-d {
+  width: 3rem;
+  height: 3rem;
+  top: 1.75rem;
+  right: 1.75rem;
+  background: rgba(255, 255, 255, 0.04);
+  filter: blur(1.375rem);
+  opacity: 0.25;
+}
+
+.acc-fx-sweep {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.06), transparent);
+  transform: skewX(-12deg) translateX(120%);
+  transition: transform 1000ms ease;
+}
+
+.acc-card-wrap:hover .acc-fx-sweep {
+  transform: skewX(-12deg) translateX(-200%);
+}
+
+.acc-card-content {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.acc-content-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+/* Icon + beam (beam ONLY on logo circle) */
+.acc-icon-wrap {
+  position: relative;
+  margin-bottom: 1.5rem;
+  width: 6rem;
+  height: 6rem;
+  display: grid;
+  place-items: center;
+}
+
+.acc-icon-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+}
+
+.acc-icon-ring-ping {
+  border: 0.125rem solid rgba(255, 255, 255, 0.2);
+  animation: accPing 1.6s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.acc-icon-ring-pulse {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: accPulse 1.6s ease-in-out infinite;
+}
+
+.acc-icon-shell {
+  position: relative;
+  width: 5.25rem;
+  height: 5.25rem;
+  border-radius: 999px;
+  border: 0.0625rem solid rgba(255, 255, 255, 0.15);
+
+  backdrop-filter: blur(0.875rem);
+  box-shadow: 0 1.125rem 3.75rem rgba(0, 0, 0, 0.6);
+  display: grid;
+  place-items: center;
+  transition: transform 500ms ease, box-shadow 500ms ease;
+  overflow: visible;
+}
+
+.acc-card-wrap:hover .acc-icon-shell {
+  transform: scale(1.05);
+  box-shadow: 0 1.125rem 3.75rem rgba(0, 0, 0, 0.6), 0 0 0 0.0625rem rgba(255, 255, 255, 0.2);
+}
+
+.acc-card-wrap:hover .article-card:hover {
+  transform: translateY(-0.3125rem);
+  box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.2), 0 0 0 0.0625rem rgba(255, 255, 255, 0.2);
+}
+
+.acc-icon-rot {
+  width: 3.5rem;
+  height: 3.5rem;
+  display: grid;
+  place-items: center;
+  transition: transform 700ms ease;
+}
+
+.acc-icon-rot img {
+  width: 3.5rem;
+  height: 3.5rem;
+  object-fit: contain;
+}
+
+/* 
+   New Container for Swapping Title/Text 
+   Uses grid to stack elements on top of each other
+*/
+.acc-text-swap-container {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  min-height: 6.25rem;
+}
+
+.acc-title {
+  font-family: 'Stage Grotesk', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin: 0;
+  grid-area: 1 / 1;
+  /* Stack on top */
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+  /* Let clicks pass through */
+}
+
+/* Hide Title on Hover */
+.acc-card-wrap:hover .acc-title {
+  opacity: 0;
+  transform: translateY(-0.625rem);
+}
+
+.acc-desc {
+  max-width: 23.75rem;
+  grid-area: 1 / 1;
+  /* Stack on top */
+  opacity: 0;
+  transform: translateY(0.625rem);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+}
+
+/* Show Description on Hover */
+.acc-card-wrap:hover .acc-desc {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.acc-desc p {
+  margin: 0;
+  font-family: 'Stage Grotesk', sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: rgba(229, 231, 235, 1);
+  /* Brighter on hover by default now */
+}
+
+.acc-bottom-line {
+  width: 14.375rem;
+  height: 0.0625rem;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.8) 50%, transparent 100%);
+  margin: 0 auto;
+}
+
+.acc-corner {
+  position: absolute;
+  width: 5rem;
+  height: 5rem;
+  opacity: 0;
+  transition: opacity 500ms ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.acc-card-wrap:hover .acc-corner {
+  opacity: 1;
+}
+
+.acc-corner-tl {
+  top: 0;
+  left: 0;
+  border-bottom-right-radius: 1.5rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+}
+
+.acc-corner-br {
+  bottom: 0;
+  right: 0;
+  border-top-left-radius: 1.5rem;
+  background: linear-gradient(315deg, rgba(255, 255, 255, 0.1), transparent);
+}
+
+@keyframes accPulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.75;
+  }
+}
+
+@keyframes accPing {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+
+  75%,
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+@keyframes accBounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(0.625rem);
+  }
+}
+
+@keyframes accBeamSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.case-grid {
+  max-width: 80rem;
+  margin: 3.5rem auto 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16.25rem, 1fr));
+  gap: 1.5rem;
+}
+
+.case-card {
+  background: rgba(2, 15, 20, 0);
+  border: 0.0625rem solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all -0.3s ease;
+  position: relative;
+  z-index: 2;
+  min-height: 28rem;
+}
+
+.case-card:hover {
+  transform: translateY(-0.25rem);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* White edge glow on hover (What We Do case studies only) */
+.case-card .glowing-effect-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.case-card .glowing-effect-overlay .glow::after {
+  opacity: max(0.4, var(--active, 0.4)) !important;
+  transition: opacity 0.35s ease;
+}
+
+.case-image-placeholder {
+  height: 21rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  background: rgba(200, 200, 200, 0.9);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.case-image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  opacity: 0.9;
+}
+
+.case-card:hover .case-image-placeholder img {
+  transform: scale(1.02);
+  opacity: 1;
+}
+
+.case-card-content {
+  position: relative;
+}
+
+.case-meta {
+  font-family: 'Stage Grotesk', sans-serif;
+  font-size: 1rem;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+.case-title {
+  font-family: 'Stage Grotesk', sans-serif;
+  font-size: 1.5rem;
+  color: #ffffff;
+  line-height: 1.3;
+  font-weight: 500;
+  padding-right: 2.5rem;
+}
+
+.case-icon {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: #ffffff;
+  transition: all -0.3s ease;
+  line-height: 1;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.case-card:hover .case-icon {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 56.25rem) {
+  .case-hero {
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+    align-items: center;
+  }
+}
+
+@media (min-width: 48rem) and (max-width: 64rem) {
+  .accelerators-section {
+    padding: 6.25rem 0 5rem 0;
+  }
+
+  .accelerators-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    max-width: 43.75rem;
+    padding: 0 1.5rem;
+  }
+
+  .accelerators-hero h2 {
+    font-size: 2.5rem;
+  }
+
+  .acc-card {
+    min-height: 20rem;
+  }
+
+  .acc-card-content {
+    padding: 1.5rem;
+  }
+
+  .acc-title {
+    font-size: 1.25rem;
+  }
+
+  .acc-desc p {
+    font-size: 0.9375rem;
+  }
+}
+
+/* Tablet only: case study section like mobile (single-row scroll, centered hero). 768px–1023px */
+@media (min-width: 48rem) and (max-width: 63.9375rem) {
+  .case-hero {
+    width: 100%;
+    max-width: 100%;
+    margin: 7.5rem auto 0 auto;
+    padding: 0 var(--spacing-2xl);
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.75rem;
+    left: 0;
+    top: 0;
+  }
+
+  .case-hero h2 {
+    font-size: 2rem;
+  }
+
+  .case-hero p {
+    font-size: 0.875rem;
+    text-align: center;
+  }
+
+  .case-br-tablet {
+    display: none;
+  }
+
+  .case-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1.25rem;
+    padding: 0 var(--spacing-2xl) 1.5rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    width: 100%;
+    max-width: 100%;
+    margin: 3.5rem auto 0;
+    grid-template-columns: unset;
+  }
+
+  .case-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .case-card {
+    flex: 0 0 78%;
+    scroll-snap-align: center;
+    max-width: none;
+    margin: 0;
+  }
+}
+
+@media (max-width: 40rem) {
+  .accelerators-section {
+    padding: 6rem 0 7.5rem 0;
+  }
+
+
+  .accelerator-card {
+    padding: 2.25rem 1.5rem 1.5rem 1.5rem;
+  }
+
+  .accelerators-hero,
+  .case-hero {
+    padding: 0 1.25rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .accelerators-hero h2,
+  .case-hero h2 {
+    font-size: 1.5rem;
+    /* Increased for mobile visibility */
+  }
+
+  .accelerators-hero p,
+  .case-hero p {
+    font-size: 0.625rem !important;
+    text-align: center;
+  }
+
+
+}
+
+/* ============================================
+   LARGE DEVICE STYLES (1024px and above)
+   ============================================ */
+@media (min-width: 64rem) {
+
+
+  .case-hero {
+    width: 100%;
+    gap: 0;
+    margin: 10rem auto 0 auto;
+    padding: 0 2rem;
+    /* Match case-grid desktop padding */
+  }
+
+  .case-hero h2 {
+    white-space: nowrap;
+  }
+}
+
+/* ============================================
+   MAC DEVICE SPECIFIC STYLES (1280px - MacBook Air)
+   Matches Figma design specifications
+   ============================================ */
+@media (min-width: 80rem) and (max-width: 85rem) {
+  /* 1280px - 1360px - MacBook Air and similar */
+
+  .accelerators-section {
+    width: 100%;
+    background: #080808;
+    padding: 6.3125rem 0 0 0;
+  }
+}
+
+/* Mobile horizontal padding */
+@media (max-width: 48rem) {
+  .accelerators-section {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .accelerators-text-section {
+    max-width: 100%;
+    /* Allow breadcrumb to take more space */
+    width: 100%;
+  }
+
+  .accelerators-text-section p {
+    font-size: 1.15rem;
+    line-height: 1.2;
+    margin-bottom: 0.125rem;
+    text-wrap: balance;
+    flex-wrap: wrap !important;
+  }
+
+  .accelerators-text-section p:nth-child(2) {
+    margin-bottom: 3.5rem;
+  }
+
+  .case-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding: 0 0 1.25rem 0;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    width: 100%;
+    scroll-padding: 0;
+  }
+
+  .case-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .case-card {
+    flex: 0 0 85%;
+    scroll-snap-align: center;
+    max-width: none;
+    margin: 0;
+  }
+}
+
+@media (max-width: 40rem) {
+
+  .accelerators-hero h2,
+  .case-hero h2 {
+    font-size: 2.125rem;
+  }
+
+  .accelerators-hero p,
+  .case-hero p {
+    font-size: 0.75rem !important;
+  }
+}

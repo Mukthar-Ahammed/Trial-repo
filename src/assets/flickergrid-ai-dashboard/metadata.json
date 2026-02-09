@@ -1,0 +1,5 @@
+{
+  "name": "FlickerGrid AI Dashboard",
+  "description": "A sophisticated AI-powered dashboard featuring an animated flickering grid background with logo masking and real-time Gemini integration.",
+  "requestFramePermissions": []
+}

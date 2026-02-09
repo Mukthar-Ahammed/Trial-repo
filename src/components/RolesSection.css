@@ -1,0 +1,379 @@
+.roles-section {
+  position: relative;
+  width: 100%;
+  padding: 5rem 1.5rem;
+  background-color: #000000;
+  overflow: hidden;
+}
+
+@media (min-width: 64rem) {
+  .roles-section {
+    padding: 7.5rem 10rem;
+    min-height: 50rem;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.roles-container {
+  max-width: 82.5rem;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-areas:
+    "title"
+    "intro"
+    "content"
+    "tabs";
+  gap: 3.5rem;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+@media (min-width: 64rem) {
+  .roles-container {
+    grid-template-columns: 5fr 7fr;
+    grid-template-areas:
+      "title intro"
+      "tabs content";
+    gap: 6.25rem;
+    text-align: left;
+  }
+}
+
+.roles-title-area {
+  grid-area: title;
+}
+
+.roles-tabs-area {
+  grid-area: tabs;
+}
+
+.roles-intro-area {
+  grid-area: intro;
+}
+
+.roles-content-area {
+  grid-area: content;
+}
+
+/* Desktop Tabs Area should align with content area top */
+@media (min-width: 64rem) {
+  .roles-tabs-area {
+    margin-top: 0;
+  }
+
+  .roles-intro-area {
+    position: relative;
+    left: 4.375rem;
+    margin-bottom: -2.5rem;
+  }
+}
+
+.roles-main-title {
+  font-family: 'Stage Grotesk', sans-serif;
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.roles-tabs {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  margin-top: 1.25rem;
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.roles-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 64rem) {
+  .roles-tabs {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0;
+    margin-top: 0;
+  }
+}
+
+.roles-tab {
+  background: none;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+@media (min-width: 64rem) {
+  .roles-tab {
+    text-align: left;
+    align-items: flex-start;
+    padding: 0.75rem 0;
+  }
+}
+
+.roles-tab-text {
+  font-family: 'Stage Grotesk', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: #666666;
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 64rem) {
+  .roles-tab-text {
+    font-size: 1.25rem;
+    font-weight: 300;
+  }
+}
+
+.roles-tab.active .roles-tab-text {
+  color: #a6f63b;
+  font-weight: 500;
+}
+
+.roles-tab:hover .roles-tab-text {
+  color: #a6f63b;
+}
+
+.roles-tab-line {
+  width: 5rem;
+  height: 0.0625rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 64rem) {
+  .roles-tab-line {
+    width: 15.625rem;
+  }
+}
+
+.roles-tab.active .roles-tab-line {
+  background-color: #a6f63b;
+  height: 0.125rem;
+}
+
+.roles-intro-text {
+  font-family: 'Stage Grotesk', sans-serif;
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 1.6;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.roles-intro-text span {
+  display: block;
+}
+
+.roles-highlight {
+  color: #a6f63b;
+  white-space: nowrap;
+}
+
+.roles-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+@media (min-width: 64rem) {
+  .roles-content {
+    position: relative;
+    left: 4.375rem;
+    align-items: flex-start;
+  }
+}
+
+.roles-content-title {
+  font-family: 'Stage Grotesk', sans-serif;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  font-weight: 500;
+  color: #ffffff;
+  margin: 0;
+}
+
+.roles-content-description {
+  font-family: 'Stage Grotesk', sans-serif;
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+  margin: 0;
+  max-width: 37.5rem;
+}
+
+@media (min-width: 64rem) {
+  .roles-content-description {
+    max-width: 32.5rem;
+    color: #ffffff;
+  }
+}
+
+.roles-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle at center, rgba(1, 52, 69, 0.4) 0%, transparent 70%);
+  filter: blur(6.25rem);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Tablet Landscape Specific Tweaks */
+@media (min-width: 64.0625rem) and (max-width: 85.375rem) {
+  .roles-section {
+    padding: 6.25rem 5rem;
+  }
+
+  .roles-container {
+    grid-template-columns: 4.5fr 7.5fr;
+    gap: 3.75rem;
+  }
+
+  .roles-main-title {
+    font-size: 2.25rem;
+  }
+
+  .roles-tab-text {
+    font-size: 1.125rem;
+  }
+
+  .roles-tab-line {
+    width: 12.5rem;
+  }
+}
+
+/* Tablet Portrait Specific Tweaks */
+@media (min-width: 48rem) and (max-width: 64rem) and (orientation: portrait) {
+  .roles-container {
+    gap: 3rem;
+  }
+
+  .roles-tabs {
+    gap: 2.5rem;
+  }
+
+  .roles-tab-line {
+    width: 11.25rem;
+  }
+}
+
+@media (max-width: 30rem) {
+  .roles-highlight {
+    max-width: 18rem;
+    font-size: 0.8rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .roles-intro-text,
+  .roles-content-description {
+    font-size: 0.9375rem;
+    /* Unified size for mobile */
+  }
+
+  .roles-intro-text {
+    gap: 0.25rem;
+  }
+
+  .roles-tabs {
+    gap: 0.5rem;
+  }
+
+  .roles-tab-text {
+    font-size: 0.875rem;
+  }
+}
+
+/* Mobile horizontal padding */
+@media (max-width: 48rem) {
+  .roles-section {
+    padding: 3.75rem 1.25rem;
+  }
+
+  .roles-container {
+    padding: 0;
+    grid-template-areas:
+      "title"
+      "intro"
+      "tabs"
+      "content";
+    gap: 2.5rem;
+  }
+
+  .roles-main-title {
+    font-size: 1.75rem;
+  }
+
+  .roles-intro-text {
+    font-size: 1rem;
+  }
+
+  .roles-content {
+    align-items: flex-start;
+    margin: 0;
+  }
+
+  .roles-content-title {
+    font-size: 1.25rem;
+    text-align: left;
+  }
+
+  .roles-content-description {
+    text-align: left;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    padding: 0 1rem 0 0;
+  }
+}
+
+@media (max-width: 30rem) {
+  .roles-section {
+    padding: 3.125rem 1rem;
+  }
+
+  .roles-intro-text {
+    font-size: 0.9375rem;
+  }
+
+  .roles-content-title {
+    font-size: 1.125rem;
+  }
+
+  .roles-content-description {
+    font-size: 0.8125rem;
+  }
+
+  .roles-tabs {
+    gap: 0.75rem;
+  }
+
+  .roles-tab-text {
+    font-size: 0.9375rem;
+  }
+}

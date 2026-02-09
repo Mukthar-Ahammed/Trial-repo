@@ -1,0 +1,721 @@
+.careers-page {
+    position: relative;
+    min-height: 100vh;
+    background-color: #000000;
+    color: white;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+}
+
+.careers-background {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.careers-grid-pattern {
+    position: absolute;
+    inset: 0;
+    background-size: 2.5rem 2.5rem;
+    background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 0.0625rem, transparent 0.0625rem),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 0.0625rem, transparent 0.0625rem);
+    mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+    opacity: 0.5;
+}
+
+.careers-gradient-blob {
+    position: absolute;
+    top: -20%;
+    left: 20%;
+    width: 37.5rem;
+    height: 37.5rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 50%;
+    filter: blur(7.5rem);
+}
+
+.careers-main {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+}
+
+.careers-hero {
+    min-height: 100vh;
+    position: relative;
+    padding-top: 0;
+    background-image: url('/src/assets/careers-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.careers-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.careers-hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40vh;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 30%, transparent 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.careers-hero-container {
+    max-width: 82.5rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 8rem var(--spacing-lg) 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 100vh;
+    position: relative;
+    z-index: 3;
+    box-sizing: border-box;
+}
+
+@media (min-width: 48rem) {
+    .careers-hero-container {
+        padding: 8rem var(--spacing-2xl) 0;
+    }
+}
+
+.careers-hero-content {
+    max-width: 56.25rem;
+    width: 100%;
+    text-align: left;
+    position: relative;
+    min-width: 0;
+}
+
+.careers-hero-title {
+    font-family: "Stage Grotesk", sans-serif;
+    font-size: clamp(2rem, 8vw, 3.75rem);
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin: 0 0 1.5rem 0;
+    text-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 48rem) {
+    .careers-hero-title {
+        font-size: 1.875rem !important;
+        width: 70%;
+        margin-top: 9.75rem;
+        position: relative;
+    }
+}
+
+.careers-hero-title-green {
+    color: #A6F63B;
+}
+
+/* Tablet only: same layout as mobile, larger typography/spacing. 768px–1023px */
+@media (min-width: 48rem) and (max-width: 63.9375rem) {
+    .careers-hero-container {
+        min-height: 100vh;
+        padding: 7rem var(--spacing-xl) 0;
+        align-items: flex-start;
+    }
+
+    .careers-hero-content {
+        text-align: left;
+        padding-left: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    .careers-hero-title {
+        font-size: 2.5rem;
+        line-height: 1.15;
+        width: 75%;
+        margin-top: 0;
+        margin-bottom: 1.75rem;
+    }
+
+    .careers-hero-subtitle {
+        font-size: 1rem;
+        max-width: 85%;
+        text-align: left;
+        line-height: 1.55;
+    }
+
+    .careers-statement {
+        height: auto;
+        min-height: 55vh;
+        padding: 6rem 0;
+    }
+
+    .careers-statement-title {
+        font-size: 2.25rem;
+        text-align: center;
+        margin-bottom: 1.75rem;
+    }
+
+    .careers-statement-text {
+        font-size: 1.375rem;
+        line-height: 1.6;
+        text-align: center;
+        min-height: 0;
+    }
+
+    .careers-who-thrives {
+        padding: 5rem var(--spacing-xl) 6rem;
+    }
+
+    .careers-who-thrives-title {
+        font-size: 2.25rem;
+        text-align: center;
+        margin-bottom: 2.5rem;
+    }
+
+    .careers-who-thrives-grid {
+        grid-template-columns: 1fr;
+        gap: 4.5rem;
+    }
+
+    .careers-who-thrives-card {
+        padding: 2rem;
+        min-height: auto;
+    }
+
+    .careers-who-thrives-card-title {
+        font-size: 1.875rem;
+    }
+
+    .careers-who-thrives-card-text {
+        font-size: 1.125rem;
+    }
+
+    .careers-roles {
+        padding: 0 var(--spacing-xl) 10rem;
+    }
+
+    .careers-roles-header {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .careers-roles-title {
+        font-size: 2.25rem;
+    }
+}
+
+@media (min-width: 64rem) {
+    .careers-hero-title {
+        font-size: 3.75rem;
+        line-height: 1.15;
+    }
+}
+
+.careers-hero-subtitle-wrapper {
+    margin-top: 2rem;
+    max-width: 59rem;
+}
+
+.careers-hero-subtitle {
+    font-family: "Blauer Nue", sans-serif;
+    font-size: 1.2rem;
+    /* Standardized desktop size */
+    font-weight: 400;
+    line-height: 1.6;
+    max-width: 59rem;
+    color: #ffffff;
+    margin: 0;
+    text-shadow: 0 0 1.875rem rgba(255, 255, 255, 0.1);
+}
+
+
+.careers-statement {
+    width: 100%;
+    height: 100vh;
+    background-color: transparent;
+    border-top: 0.0625rem solid rgba(255, 255, 255, 0.05);
+    padding: 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 20;
+}
+
+@media (max-width: 48rem) {
+    .careers-hero {
+        min-height: 100vh;
+    }
+
+    .careers-hero-container {
+        min-height: 100vh;
+        padding: 6.25rem var(--spacing-lg) 0;
+        align-items: flex-start;
+    }
+
+    .careers-hero-content {
+        text-align: left;
+    }
+
+    .careers-hero-subtitle {
+        font-size: 0.75rem;
+        text-align: left;
+        max-width: 83%;
+        line-height: 1.5;
+    }
+
+    .careers-statement {
+        height: auto;
+        min-height: 50vh;
+        padding: 5rem 0;
+    }
+
+    .careers-statement-title {
+        font-size: 1.75rem;
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .careers-statement-text {
+        font-size: 1.25rem;
+        line-height: 1.6;
+        text-align: center;
+    }
+
+    .careers-who-thrives {
+        padding: 3.75rem var(--spacing-lg);
+    }
+
+    .careers-who-thrives-title {
+        font-size: 1.75rem;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .careers-who-thrives-grid {
+        grid-template-columns: 1fr;
+        gap: 4.125rem;
+    }
+
+    .careers-who-thrives-card {
+        padding: 1.5rem;
+        min-height: auto;
+        min-width: 0;
+    }
+
+    .careers-roles {
+        padding-bottom: 6.25rem;
+    }
+}
+
+@media (min-width: 48rem) {
+    .careers-hero-content {
+        padding-left: 2rem;
+    }
+}
+
+@media (min-width: 64rem) {
+    .careers-hero-content {
+       right:6rem;
+    }
+
+    .careers-statement {
+        padding: 7.5rem 0;
+    }
+}
+
+@media (min-width: 120rem) {
+    .careers-hero-content {
+        max-width: 62rem;
+        right:12rem;
+
+    }
+}
+
+@media (min-width: 48rem) and (max-width: 63.9375rem) and (orientation: portrait) {
+    .careers-statement {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+}
+
+.careers-statement-container {
+    max-width: 82.5rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+    z-index: 10;
+    box-sizing: border-box;
+}
+
+.careers-statement-content {
+    max-width: 56rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.careers-statement-title {
+    font-family: "Stage Grotesk", sans-serif;
+    font-size: 3.125rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: white;
+    margin-bottom: 2.1875rem;
+    text-align: left;
+    width: 100%;
+}
+
+.careers-statement-text {
+    font-family: "Stage Grotesk", sans-serif;
+    font-size: 1.125rem;
+    font-weight: 300;
+    line-height: 1.4;
+    color: #D9D9D9;
+    margin: 0;
+    letter-spacing: normal;
+}
+
+@media (min-width: 48rem) {
+    .careers-statement-text {
+
+        font-size: 1.625rem;
+        line-height: 1.4;
+        height: auto;
+        min-height: 15vh;
+    }
+}
+
+@media (min-width: 64rem) {
+    .careers-statement-text {
+        font-size: 1.9375rem;
+        line-height: 1.25;
+        height: auto;
+        min-height: 22vh;
+    }
+}
+
+@media (min-width: 48rem) and (max-width: 63.9375rem) {
+    .careers-statement-content {
+        padding-left: var(--spacing-2xl);
+        padding-right: var(--spacing-2xl);
+    }
+
+    .careers-statement-text {
+        font-size: 1.375rem;
+        min-height: 0;
+    }
+
+    .careers-who-thrives-card-text {
+        font-size: 1.125rem;
+    }
+}
+
+.careers-ellipse-section {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 3.125rem;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.careers-ellipse-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.careers-ellipse-glow {
+    position: absolute;
+    width: 75rem;
+    height: 37.5rem;
+    background: radial-gradient(ellipse at center, rgba(0, 150, 150, 0.15) 0%, rgba(0, 100, 120, 0.08) 30%, transparent 70%);
+    filter: blur(6.25rem);
+    opacity: 0.6;
+}
+
+.careers-who-thrives {
+    width: 100%;
+    max-width: 82.5rem;
+    margin: 0 auto;
+    padding: 5rem var(--spacing-lg);
+    position: relative;
+    z-index: 2;
+    box-sizing: border-box;
+}
+
+@media (min-width: 48rem) and (max-width: 63.9375rem) and (orientation: portrait) {
+    .careers-who-thrives {
+        padding-top: 2rem;
+    }
+}
+
+@media (min-width: 64rem) {
+    .careers-who-thrives {
+        padding: 0 3rem 10.625rem 0.625rem;
+    }
+}
+
+.careers-who-thrives-glow {
+    position: absolute;
+    top: -29.125rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 106.625rem;
+    height: 45.625rem;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #001117 0%, #013445 100%);
+    filter: blur(12.5rem);
+    opacity: 0.77;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.careers-who-thrives-title {
+    font-family: "Stage Grotesk", sans-serif;
+    font-size: 2.25rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: white;
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.careers-who-thrives-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4.125rem;
+    width: 100%;
+    min-width: 0;
+}
+
+@media (min-width: 48rem) {
+    .careers-who-thrives-title {
+        font-size: 3rem;
+    }
+
+    .careers-who-thrives-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 4.125rem;
+    }
+}
+
+.careers-who-thrives-card {
+    position: relative;
+    background: rgba(2, 15, 20, 0);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 18.75rem;
+    min-width: 0;
+    backdrop-filter: blur(0.5rem);
+    transition: background-color 0.5s ease, transform 0.3s ease;
+    border: 0.0625rem solid rgba(255, 255, 255, 0.1);
+}
+
+.careers-who-thrives-card:hover {
+    background: rgba(2, 15, 20, 0.15);
+    transform: translateY(-0.25rem);
+}
+
+.glowing-effect-overlay {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Make white glow visible on thrives cards (desktop + mobile) */
+.careers-who-thrives-card .glowing-effect-overlay .glow::after {
+    opacity: max(0.4, var(--active, 0.4)) !important;
+    transition: opacity 0.35s ease;
+}
+
+.careers-who-thrives-card-content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.careers-thrives-icon {
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.careers-thrives-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.careers-who-thrives-card-title {
+    font-family: "Stage Grotesk", sans-serif;
+    font-size: 1.75rem;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: #A6F63B;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 48rem) and (max-width: 63.9375rem) {
+    .careers-who-thrives-card-title {
+        font-size: 1.75rem;
+    }
+}
+
+@media (min-width: 64rem) {
+    .careers-who-thrives-card-title {
+        font-size: 2.25rem;
+    }
+}
+
+.careers-who-thrives-card-text {
+    font-family: "Blauer Nue", sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.6);
+    position: relative;
+    z-index: 10;
+    margin: 0;
+    text-align: left;
+}
+
+@media (min-width: 48rem) {
+    .careers-who-thrives-card-text {
+        font-size: 1.125rem;
+    }
+}
+
+.careers-roles {
+    width: 100%;
+    max-width: 82.5rem;
+    margin: 0 auto;
+    padding: 0 0 12.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    position: relative;
+    box-sizing: border-box;
+}
+
+
+@media (min-width: 64rem) {
+    .careers-roles {
+        padding: 0 3rem 17.5rem;
+    }
+}
+
+.careers-roles-glow {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 75rem;
+    height: 37.5rem;
+    background: radial-gradient(ellipse at center, rgba(0, 150, 150, 0.3) 0%, rgba(0, 100, 120, 0.15) 30%, transparent 70%);
+    filter: blur(6.25rem);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.careers-roles-header {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+}
+
+@media (min-width: 48rem) and (max-width: 63.9375rem) {
+    .careers-roles-header {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (min-width: 64rem) {
+    .careers-roles-header {
+        grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+    }
+}
+
+.careers-roles-title {
+    font-family: "Stage Grotesk", sans-serif;
+    font-size: 2.25rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    position: relative;
+}
+
+.careers-scroll-to-explore {
+    position: absolute;
+    bottom: 15vh;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: "Stage Grotesk", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #A6F63B;
+    text-align: center;
+    text-shadow: 0 0 0.25rem #FFF;
+    z-index: 30;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    40% {
+        transform: translateX(-50%) translateY(-0.625rem);
+    }
+
+    60% {
+        transform: translateX(-50%) translateY(-0.3125rem);
+    }
+}
+
+/* Mobile horizontal padding */
+@media (max-width: 48rem) {
+    .careers-statement-container,
+    .careers-who-thrives {
+        padding-left: var(--spacing-xl);
+        padding-right: var(--spacing-xl);
+    }
+}

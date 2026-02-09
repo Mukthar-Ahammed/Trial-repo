@@ -1,0 +1,38 @@
+/* Loader-13 Container */
+.loader-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CV Logo SVG - Static (no rotation) */
+.loader-svg-logo {
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 0 0.25rem rgba(166, 246, 59, 0.3));
+}
+
+/* Rotating stroke SVG */
+.loader-rotating-stroke {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  animation: rotate-stroke 2s linear infinite;
+}
+
+@keyframes rotate-stroke {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Stroke circle with glow */
+.stroke-circle {
+  filter: drop-shadow(0 0 0.1875rem rgba(166, 246, 59, 0.6));
+}

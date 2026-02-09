@@ -1,0 +1,22 @@
+---
+description: Mobile-first, no frameworks, responsive verification
+globs: "**/*.{css,scss,jsx,tsx,html}"
+alwaysApply: false
+---
+
+# UI Constraints
+
+## Rule 2: Mobile-First Constraint
+
+- Assume mobile-first rendering
+- Desktop appearance must remain visually identical unless overflow or clipping occurs
+
+## Rule 3: No Framework Injection
+
+- Do not introduce Tailwind, Bootstrap, or any CSS framework
+- Do not replace existing CSS with utility-based styling
+
+## Rule 4: Demo-Safety Verification
+
+- After every change, mentally verify rendering at: **375px**, **768px**, **1024px**, **1440px**
+- If any uncertainty exists, choose the safer visual option

@@ -1,0 +1,572 @@
+/* ============================================
+   ABOUT SECTION - RESPONSIVE GRID LAYOUT
+   REMOVED: All absolute positioning and fixed offsets
+   USES: CSS Grid with proper responsive units
+   ============================================ */
+
+.about-section {
+    position: relative;
+    width: 100%;
+    padding-top: 10vh;
+
+    overflow: hidden;
+    z-index: 1;
+    min-height: 100vh;
+}
+
+.about-glow-top-right {
+    position: absolute;
+    top: -12.5rem;
+    right: -25rem;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.about-glow-ellipse {
+    width: 81.4601875rem;
+    height: 51.4811875rem;
+    transform: rotate(86.339deg);
+    border-radius: 81.4601875rem;
+    background: #001D26;
+    filter: blur(12.5rem);
+}
+
+/* Grid layout - equal columns so image has equal left/right space when centered */
+.about-content {
+    max-width: var(--container-xl);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(2rem, 6vw, 6rem);
+    align-items: start;
+    padding: 0;
+    text-align: left;
+}
+
+/* Left column with text content */
+.about-left {
+    position: relative;
+    margin-left: 3.125rem;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2xl);
+}
+
+/* Main heading - responsive typography */
+.about-heading {
+    font-family: "Stage Grotesk", sans-serif;
+    font-size: 3rem;
+    font-weight: 400;
+    margin: 0;
+    line-height: 1.1;
+    color: #FFFFFF;
+    white-space: pre-line;
+    margin-top: 9vh;
+    position: relative;
+    margin-left: 3.6vw;
+}
+
+.about-mob-break {
+    display: none;
+}
+
+@media (max-width: 48rem) {
+    .about-mob-break {
+        display: block;
+    }
+}
+
+.about-heading-green {
+    color: #A6F63B;
+}
+
+
+
+/* Text container - responsive width, uses more of left column */
+.about-text-container {
+    display: flex;
+    margin-left: clamp(27vw, 5vw, 3.125rem);
+    position: relative;
+    flex-direction: column;
+    gap: 2rem;
+    width: 90%;
+    max-width: min(100%, 50rem);
+}
+
+/* Description text */
+.about-description {
+    font-family: "Stage Grotesk", sans-serif;
+    font-size: 1.35rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--text-gray);
+    margin: 0;
+    white-space: pre-line;
+    width: 100%;
+}
+
+/* CTA button - INCREASED SIZE */
+.btn-see-how {
+    display: inline-block;
+    text-decoration: none;
+    padding: 0.75rem 1.75rem;
+    /* Increased padding */
+    background: transparent;
+    color: var(--primary-green);
+    border: 0.09375rem solid var(--primary-green);
+    border-radius: 0.125rem;
+    font-family: "Stage Grotesk", sans-serif;
+    font-size: 0.875rem;
+    /* Increased from 12px to 14px */
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: fit-content;
+    box-shadow: 0 0 0.28125rem 0 var(--primary-green);
+    letter-spacing: 0.05em;
+}
+
+.btn-see-how:hover {
+    background: var(--primary-green);
+    color: var(--bg-dark);
+    box-shadow: 0 0 0.5rem 0 var(--primary-green);
+    /* 8px */
+    transform: translateY(-0.125rem);
+    /* Subtle lift */
+}
+
+/* Right column with images - full width so centered image has equal left/right space */
+.about-right {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+/* Image container - centered with max-width so equal space on left and right */
+.about-image-container {
+    position: relative;
+    top: 8.4375rem;
+    left: 0;
+    width: 100%;
+    max-width: 22rem;
+    aspect-ratio: 355 / 402;
+    overflow: hidden;
+    top: 22rem;
+    left: 15rem;
+
+}
+
+/* Main image - proper object-fit, contained to prevent overflow */
+.about-image-main {
+    position: relative;
+    top: -3.8125rem;
+    width: 112%;
+    height: 102%;
+    max-width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center top;
+    object-position: center top;
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.about-image-container:hover .about-image-main {
+    transform: scale(1.2);
+    /* Reduced zoom on hover */
+}
+
+/* Abstract image decoration - responsive positioning */
+.about-image-abstract {
+    position: relative;
+    width: 177%;
+    max-width: 18.5rem !important;
+    aspect-ratio: 1;
+    overflow: hidden;
+    align-self: flex-start;
+    perspective: 66.5rem;
+    margin-left: 2.9vw;
+}
+
+/* Abstract image with hover effect */
+.abstract-image {
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+    transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform-style: preserve-3d;
+    transform-origin: center center;
+}
+
+
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS - ABOUT SECTION
+   Comprehensive responsive design for all screen sizes
+   ============================================ */
+
+/* Mobile devices (≤768px) */
+@media (max-width: 48rem) {
+    .about-section {
+        padding-top: 6.25rem;
+        padding-bottom: 1.5rem;
+        min-height: auto;
+    }
+
+    .about-content {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        /* Ultra reduced from 1rem */
+        padding: 0 !important;
+    }
+
+    .about-left {
+        display: contents;
+    }
+
+    .about-heading {
+        font-size: 1.75rem;
+        width: 100%;
+        margin-left: 0;
+        text-align: left;
+        order: 1;
+        margin-top: 0;
+    }
+
+    .about-text-container {
+        margin-left: 0;
+        left: 0;
+        order: 3;
+        margin-top: -4.5rem;
+        /* Drastically pull closer to the glowing logo */
+        padding: 0 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .about-description {
+        font-size: 0.9rem;
+        /* Reduced from 1rem */
+        /* 16px on mobile */
+    }
+
+    .about-right {
+        display: contents;
+    }
+
+    .about-image-container {
+        display: none;
+    }
+
+    .about-image-abstract {
+        
+        margin-top: 0;
+        order: 2;
+        margin-bottom: -2rem;
+        /* Pull content below it up */
+        left: 0;
+        align-self: flex-start;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .abstract-image {
+        margin-bottom: 0;
+        z-index: 14;
+        position: relative;
+        left: 0;
+        width: 60%;
+        height: auto;
+        max-height: 12rem;
+        object-fit: contain;
+    }
+
+    .btn-see-how {
+        font-size: 0.75rem;
+        width: fit-content;
+        padding: 0.75rem 1.5rem;
+    }
+}
+
+/* Tablet only: same layout as mobile, bigger fonts, tablet padding. 768px–1023px */
+@media (min-width: 48rem) and (max-width: 63.9375rem) {
+    .about-section {
+        padding: 5rem var(--spacing-2xl) 3rem;
+        padding-top: 6rem;
+        min-height: auto;
+    }
+
+    .about-content {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0;
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
+    .about-left {
+        display: contents;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .about-heading {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        font-size: 2.25rem;
+        text-align: left;
+        order: 1;
+    }
+
+    .about-text-container {
+        margin-left: 0;
+        left: 0;
+        order: 3;
+        margin-top: -3rem;
+        padding: 0 var(--spacing-xl);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .about-description {
+        font-size: 1.0625rem;
+    }
+
+    .about-right {
+        display: contents;
+    }
+
+    .about-image-container {
+        display: none;
+    }
+
+    .about-image-abstract {
+        margin-top: 0;
+        order: 2;
+        margin-bottom: -1.5rem;
+        left: 0;
+        align-self: flex-start;
+        display: flex;
+        justify-content: flex-start;
+        margin-left: 0;
+    }
+
+    .abstract-image {
+        margin-bottom: 0;
+        z-index: 14;
+        position: relative;
+        left: 0;
+        width: 100%;
+        max-height: 14rem;
+    }
+
+    .btn-see-how {
+        font-size: 0.875rem;
+        padding: 0.875rem 1.75rem;
+    }
+}
+
+/* Standard laptops (≤1440px) */
+@media (max-width: 90rem) {
+    .about-content {
+        gap: clamp(3rem, 8vw, 12rem);
+    }
+
+    .about-heading {
+        width: 50vw;
+        font-size: 2.75rem;
+    }
+
+    .about-description {
+        font-size: 1.25rem;
+    }
+}
+
+/* Large screens (≥1920px) */
+@media (min-width: 120rem) {
+
+    /* 1920px */
+    .about-section {
+        padding: var(--spacing-3xl) 0;
+        /* 64px */
+    }
+
+    .about-content {
+        max-width: 100%;
+        gap: clamp(4rem, 8vw, 8rem);
+        /* 64px to 128px */
+        padding: 0 var(--spacing-4xl);
+        /* 80px */
+    }
+
+    .about-heading {
+        
+        font-size: 4.5rem;
+    }
+
+    .about-description {
+
+        width: 80%;
+        font-size: 1.5rem;
+        /* Larger on big screens */
+        line-height: 1.6;
+    }
+
+    .btn-see-how {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .about-image-main {
+        /* USE THIS TO ADJUST IMAGE CONTENT POSITION:
+           Format: horizontal vertical
+           Values: center, top, bottom, left, right, or px/%
+           
+           Examples:
+           object-position: center top;    (Top aligned)
+           object-position: center 20px;   (20px from top)
+           object-position: center bottom; (Bottom aligned)
+        */
+        object-position: center top;
+    }
+}
+
+/* Landscape orientation on tablets */
+@media (min-width: 48rem) and (max-width: 63.9375rem) and (orientation: landscape) {
+    .about-section {
+        padding: var(--spacing-xl) 0;
+        /* 32px - reduced for landscape */
+    }
+
+    .about-content {
+        gap: var(--spacing-xl);
+        /* 32px */
+    }
+}
+
+/* Large screens (≥1440px) – full typography; image uses scoped block below */
+@media (min-width: 90rem) {
+    .about-content {
+        max-width: 100%;
+        width: 95vw;
+        gap: 4rem;
+        padding: 0 var(--spacing-2xl);
+    }
+
+    .about-heading {
+        font-size: 4.5rem;
+        width: 50vw;
+    }
+
+    .about-description {
+        font-size: 1.25rem;
+        line-height: 1.5;
+        color: #d9d9d9;
+    }
+
+    .btn-see-how {
+        font-size: 0.875rem;
+        padding: 0.75rem 1.5rem;
+        letter-spacing: 0.05em;
+    }
+}
+
+/* Image only for 1440px–1919px; base applies below 90rem, 120rem block applies at 1920px+ */
+@media (min-width: 90rem) and (max-width: 119.9375rem) {
+    .about-image-container {
+        width: 106%;
+        max-width: 20.5rem;
+        aspect-ratio: 355 / 402;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        top: 13rem;
+    }
+
+    .about-image-main {
+        width: 100%;
+        height: 100%;
+        max-width: none;
+        object-fit: cover;
+        object-position: 111% 50%;
+        display: block;
+        margin: 0;
+        top: 0;
+    }
+}
+
+/* Extra-large (≥1920px) */
+@media (min-width: 120rem) {
+    .about-image-container {
+        position: relative;
+        top: 14.6875rem;
+        margin-left: auto;
+        margin-right: auto;
+        width: 79%;
+        max-width: 32rem;
+    }
+
+    .about-image-main {
+        position: relative;
+        top: -0.625rem;
+        width: 50%;
+        height: 48%;
+        max-width: none;
+        object-fit: cover;
+        object-position: 111% 0%;
+        transform: scale(1.5);
+    }
+
+    .about-content {
+        max-width: 100%;
+    }
+}
+
+/* Mobile (Pixel 7 Pro, etc.) – equal left/right padding, content left-aligned */
+@media (max-width: 48rem) {
+    .about-section {
+        padding-left: var(--spacing-xl);
+        padding-right: var(--spacing-xl);
+    }
+
+    .about-content {
+        padding-left: var(--spacing-md) !important;
+        padding-right: var(--spacing-md) !important;
+        margin: 0 auto;
+        text-align: left;
+    }
+
+    .about-left {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .about-text-container {
+        margin-left: 0;
+        margin-right: auto;
+    }
+
+    .about-image-abstract {
+        justify-content: flex-start;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

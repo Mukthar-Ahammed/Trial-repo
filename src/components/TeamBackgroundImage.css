@@ -1,0 +1,62 @@
+.team-bg-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.team-bg-layer {
+  position: absolute;
+  inset: 0;
+  display: contents;
+}
+
+.team-bg-clip {
+  position: absolute;
+  inset: 0;
+  display: contents;
+}
+
+.team-bg-group {
+  position: absolute;
+  inset: -11.35% -0.9% -35.87% -0.72%;
+  display: contents;
+}
+
+.team-bg-masked {
+  position: absolute;
+  inset: -11.35% -0.9% -35.87% -0.72%;
+  mask-size: 64.3125rem 29.625rem;
+  mask-position: 0.4608125rem 3.362875rem;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 64.3125rem 29.625rem;
+  -webkit-mask-position: 0.4608125rem 3.362875rem;
+  -webkit-mask-repeat: no-repeat;
+}
+
+.team-bg-image-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.team-bg-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+}
+
+.team-bg-gradient {
+  position: absolute;
+  inset: 0;
+  mask-size: 64.3125rem 29.625rem;
+  mask-position: 0rem 0rem;
+  mask-repeat: no-repeat;
+  mix-blend-mode: multiply;
+  -webkit-mask-size: 64.3125rem 29.625rem;
+  -webkit-mask-position: 0rem 0rem;
+  -webkit-mask-repeat: no-repeat;
+}

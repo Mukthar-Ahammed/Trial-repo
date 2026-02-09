@@ -1,0 +1,156 @@
+.insights-hero {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background: #020F14;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.insights-hero .light-rays-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Top black gradient - pro UI enhancement */
+/* Overlay removed */
+/* .insights-hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40vh;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 30%, transparent 100%);
+  z-index: 2;
+  pointer-events: none;
+} */
+
+/* Navbar overrides handled by global Navbar.css */
+
+
+.insights-hero-content {
+  position: absolute;
+  top: 45%;
+  /* Shifted up from 50% */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 5;
+  pointer-events: auto;
+  width: 90%;
+  /* Added width for mobile scaling */
+  max-width: 50rem;
+}
+
+.insights-hero-title {
+  font-family: 'Stage Grotesk', sans-serif;
+  font-size: clamp(2.5rem, 10vw, 3.125rem);
+  /* Fluid sizing */
+  font-weight: 500;
+  color: white;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.1;
+}
+
+.insights-hero-subtitle {
+  font-family: 'Blauer Nue', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: #fafafc;
+  margin: 0 auto;
+  max-width: 45rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.insights-scroll-to-explore {
+  position: absolute;
+  bottom: 25vh;
+  /* Shifted up from 15vh */
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Stage Grotesk", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #a6f63b;
+  text-align: center;
+  z-index: 10;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  40% {
+    transform: translateX(-50%) translateY(-0.625rem);
+  }
+
+  60% {
+    transform: translateX(-50%) translateY(-0.3125rem);
+  }
+}
+
+@media (max-width: 48rem) {
+  .insights-hero {
+    height: 100vh;
+  }
+
+  .insights-hero-content {
+    width: 95%;
+    padding: 0 0.625rem;
+  }
+
+  .insights-hero-title {
+    font-size: 2.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .insights-hero-subtitle {
+    width: 80%;
+    font-size: 0.75rem;
+    padding: 0;
+    max-width: 100%;
+    line-height: 1.5;
+  }
+
+  .insights-scroll-to-explore {
+    bottom: 5rem;
+  }
+}
+
+/* Tablet only: same layout as mobile, slightly larger type, tablet padding. 768px–1023px */
+@media (min-width: 48rem) and (max-width: 63.9375rem) {
+  .insights-hero-content {
+    width: 92%;
+    padding: 0 var(--spacing-xl);
+  }
+
+  .insights-hero-title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .insights-hero-subtitle {
+    font-size: 0.9375rem;
+    width: 90%;
+    max-width: 100%;
+    line-height: 1.5;
+  }
+
+  .insights-scroll-to-explore {
+    bottom: 6rem;
+    font-size: 0.9375rem;
+  }
+}

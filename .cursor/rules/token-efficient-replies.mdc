@@ -1,0 +1,11 @@
+---
+description: Use minimal tokens; no explanations or "changes made" unless asked
+alwaysApply: true
+---
+
+# Token-Efficient Replies
+
+- Use the least amount of tokens in replies.
+- Do not explain unless explicitly asked.
+- Prefer brevity; skip grammar niceties when safe.
+- Do not generate a "changes made" or summary section unless the user asks for it.

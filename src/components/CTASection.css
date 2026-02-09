@@ -1,0 +1,214 @@
+/* ============================================
+   CTA SECTION - CALL TO ACTION
+   Fully responsive with fluid typography
+   ============================================ */
+
+.cta-section {
+  width: 100%;
+  position: relative;
+  padding: var(--spacing-4xl) 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  background-color: #020F14;
+  border: none;
+  border-bottom: none;
+}
+
+/* Background image layer */
+.cta-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.cta-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border: none;
+  display: block;
+}
+
+/* Content container */
+.cta-content {
+  position: relative;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-2xl);
+  /* 48px */
+  text-align: center;
+  max-width: 75rem;
+  /* 1200px */
+  padding: 0 var(--spacing-md);
+  /* 16px */
+}
+
+/* CTA title - fluid typography */
+.cta-title {
+  font-family: "Stage Grotesk", sans-serif;
+  font-size: clamp(1.875rem, 5vw, 3.325rem);
+  /* 30px to 66px fluid */
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--text-white);
+  margin: 0;
+  max-width: 38.9375rem;
+  /* 623px - matches Figma width */
+}
+
+.cta-title-break {
+  display: none;
+}
+
+@media (min-width: 48rem) and (max-width: 64rem) and (orientation: portrait) {
+  .cta-title-break {
+    display: block;
+  }
+}
+
+/* CTA subtitle */
+.cta-subtitle {
+  font-family: "Blauer Nue", sans-serif;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 300;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 1rem 0 0 0;
+  max-width: 50rem;
+}
+
+/* CTA button */
+.cta-button {
+  background: transparent;
+  color: var(--accent-green);
+  font-family: "Stage Grotesk", sans-serif;
+  font-size: 1rem !important;
+  /* 16px */
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  padding: 0.75rem 1.25rem;
+  /* 12px 20px */
+  border: 0.09375rem solid #a6f63b;
+  border-radius: 0.125rem;
+  /* 2px */
+  cursor: pointer;
+  box-shadow: 0 0 0.25rem 0 var(--accent-green);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cta-button:hover {
+  background: var(--accent-green);
+  color: var(--bg-dark);
+  box-shadow: 0 0 0.5rem 0 var(--accent-green);
+  /* 8px */
+  transform: translateY(-0.125rem);
+  /* 2px */
+}
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS - CTA SECTION
+   ============================================ */
+
+/* Mobile devices (≤640px) */
+@media (max-width: 40rem) {
+
+  /* 640px */
+  .cta-section {
+    padding: var(--spacing-2xl) 0;
+    /* 48px */
+  }
+
+  .cta-content {
+    gap: var(--spacing-xl);
+    /* 32px */
+  }
+
+  .cta-button {
+    width: 100%;
+    max-width: 18.75rem;
+    /* 300px */
+    padding: 0.75rem 1rem;
+    /* 12px 16px */
+  }
+}
+
+/* Tablets (641px to 1024px) */
+@media (min-width: 40.0625rem) and (max-width: 64rem) {
+  .cta-section {
+    padding: var(--spacing-3xl) 0;
+  }
+}
+
+/* Tablet only: same as mobile layout, bigger fonts, tablet padding. 768px–1023px */
+@media (min-width: 48rem) and (max-width: 63.9375rem) {
+  .cta-section {
+    padding: var(--spacing-4xl) var(--spacing-2xl);
+  }
+
+  .cta-content {
+    gap: var(--spacing-2xl);
+    padding: 0 var(--spacing-xl);
+  }
+
+  .cta-title {
+    font-size: 2.5rem;
+  }
+
+  .cta-subtitle {
+    font-size: 1.125rem;
+  }
+
+  .cta-button {
+    font-size: 1.0625rem !important;
+    padding: 0.875rem 1.5rem;
+  }
+}
+
+/* Small laptops (≤1366px) */
+@media (max-width: 85.375rem) {
+
+  /* 1366px */
+}
+
+/* Large screens (≥1920px) */
+@media (min-width: 120rem) {
+
+  /* 1920px */
+  .cta-section {
+    padding: 7.5rem 0;
+    /* 120px */
+  }
+
+  .cta-content {
+    gap: var(--spacing-3xl);
+    /* 64px */
+    max-width: 87.5rem;
+    /* 1400px */
+  }
+
+
+  .cta-button {
+    padding: 0.75rem 1.25rem;
+    /* 12px 20px */
+    font-size: 0.875rem;
+    /* 14px */
+  }
+}
+
+/* Mobile horizontal padding */
+@media (max-width: 48rem) {
+  .cta-section {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}

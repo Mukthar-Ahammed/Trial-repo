@@ -1,0 +1,237 @@
+.blog-resources-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: #020F14;
+  padding: 8.625rem 1.25rem;
+}
+
+.blog-container {
+  position: relative;
+  max-width: 75rem;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.blog-featured-card {
+  /* background: #0a1f28; */
+  /* border-radius: 8px; */
+  overflow: hidden;
+  margin-bottom: 3.75rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.blog-featured-card:hover {
+  transform: translateY(-0.3125rem);
+}
+
+.blog-featured-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.blog-featured-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blog-featured-badge {
+  /* stroke: black; */
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  z-index: 10;
+  font-family: 'Stage Grotesk', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.blog-featured-content {
+  padding-top: 1.5625rem;
+  position: relative;
+}
+
+.blog-featured-title {
+  font-family: 'Stage Grotesk', sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: white;
+  line-height: 1.3;
+  margin: 0 0 1.25rem 0;
+}
+
+.blog-featured-date {
+  font-family: 'Stage Grotesk', sans-serif;
+  font-size: 1rem;
+  color: #d9d9d9;
+  text-transform: uppercase;
+  margin: 0;
+  font-weight: 300;
+}
+
+.blog-filters {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 3.125rem;
+  flex-wrap: wrap;
+}
+
+.blog-filter-btn {
+  padding: 0.4375rem 0.625rem;
+  font-family: 'Stage Grotesk', sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  border: 0.04375rem solid #d9d9d9;
+  border-radius: 0.1875rem;
+  background: transparent;
+  color: #d9d9d9;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.blog-filter-btn.active {
+  border-color: #a6f63b;
+  color: #a6f63b;
+  font-weight: 500;
+}
+
+.blog-filter-btn:hover {
+  border-color: #a6f63b;
+  color: #a6f63b;
+}
+
+.blog-articles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.875rem;
+}
+
+.blog-article-card {
+  position: relative;
+  aspect-ratio: 3/4;
+  border-radius: 1rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  justify-content: space-between;
+}
+
+.blog-article-card:hover {
+  transform: translateY(-0.3125rem);
+}
+
+.blog-article-card.gradient-teal {
+  background: linear-gradient(135deg, #0d5454 0%, #1a7d7d 100%);
+}
+
+.blog-article-card.gradient-gray {
+  background: linear-gradient(135deg, #3a4a4d 0%, #5a6a6d 100%);
+}
+
+.blog-article-card.gradient-green {
+  background: linear-gradient(135deg, #5a7d2d 0%, #8ab83d 50%, #c4d96b 100%);
+}
+
+.blog-article-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.blog-article-category {
+  font-family: 'Stage Grotesk', sans-serif;
+  font-size: 1rem;
+  color: white;
+  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: 0.05em;
+  font-weight: 300;
+}
+
+.blog-article-title {
+  font-family: 'Stage Grotesk', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: white;
+  line-height: 1.2;
+  margin: 0;
+  flex: 1;
+}
+
+.blog-article-date {
+  font-family: 'Stage Grotesk', sans-serif;
+  font-size: 1rem;
+  color: white;
+  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: 0.05em;
+  font-weight: 300;
+}
+
+.blog-article-image {
+  width: calc(120% + 3.25rem);
+  margin: auto -4.4375rem -2rem -2rem;
+  overflow: hidden;
+}
+
+.blog-article-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+@media (max-width: 48rem) {
+  .blog-resources-section {
+    padding: 3.75rem 1.25rem;
+  }
+
+  .blog-featured-image {
+    aspect-ratio: 16 / 9;
+  }
+
+  .blog-featured-badge {
+    top: 0.9375rem;
+    left: 0.9375rem;
+    font-size: 0.6875rem;
+  }
+
+  .blog-featured-content {
+    padding: 1.875rem 1.25rem;
+  }
+
+  .blog-featured-title {
+    font-size: 1.5rem;
+  }
+
+  .blog-articles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-article-card {
+    padding: 1.5rem;
+  }
+
+  .blog-article-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* Mobile horizontal padding */
+@media (max-width: 48rem) {
+  .blog-resources-section {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}

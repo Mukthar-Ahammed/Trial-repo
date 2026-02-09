@@ -1,0 +1,34 @@
+/* ============================================
+   VALIDATE PAGE
+   ============================================ */
+
+.validate-page {
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--bg-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xl);
+}
+
+.validate-page-container {
+  width: 100%;
+  max-width: var(--container-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive */
+@media (max-width: 48rem) {
+  .validate-page {
+    padding: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 40rem) {
+  .validate-page {
+    padding: var(--spacing-md);
+  }
+}

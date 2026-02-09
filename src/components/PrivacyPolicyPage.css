@@ -1,0 +1,203 @@
+.privacy-page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #020f14 0%, #0a1f25 50%, #020f14 100%);
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+.privacy-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.privacy-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.15;
+}
+
+.privacy-main {
+  position: relative;
+  z-index: 10;
+  padding: 7.5rem 0 6.25rem;
+}
+
+.privacy-container {
+  max-width: 56.25rem;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+
+.privacy-title {
+  font-family: 'Stage Grotesk', sans-serif;
+  font-size: 3.125rem;
+  font-weight: 500;
+  text-align: center;
+  margin: 0 0 6.25rem 0;
+  line-height: 1.2;
+}
+
+.privacy-content {
+  position: relative;
+}
+
+.privacy-date {
+  font-family: 'Stage Grotesk', sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: #737373;
+  text-transform: uppercase;
+  margin: 0 0 2.5rem 0;
+  letter-spacing: 0.05em;
+}
+
+.privacy-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.privacy-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.privacy-section-title {
+  font-family: 'Stage Grotesk', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.privacy-body p {
+  font-family: 'Stage Grotesk', sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: #d9d9d9;
+  line-height: 1.6;
+  margin: 0;
+  text-align: justify;
+}
+
+.privacy-body ul {
+  font-family: 'Stage Grotesk', sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: #d9d9d9;
+  line-height: 1.8;
+  margin: 0.75rem 0 0 1.25rem;
+  padding-left: 1.25rem;
+  list-style: disc;
+}
+
+.privacy-body ul li {
+  margin-bottom: 0.625rem;
+}
+
+.privacy-body ul li strong {
+  color: #a6f63b;
+}
+
+.privacy-contact {
+  margin-top: 5rem;
+  text-align: center;
+  padding: 0 0 3.75rem 0;
+  border-bottom: 0.0625rem solid rgba(166, 246, 59, 0.2);
+}
+
+.privacy-contact p {
+  font-family: 'Stage Grotesk', sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: #d9d9d9;
+  margin: 0;
+}
+
+.privacy-contact-link {
+  font-size: 1.3rem;
+  color: #a6f63b;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+.privacy-contact-link:hover {
+  color: #c5ff59;
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 48rem) {
+  .privacy-main {
+    padding: 5rem 0 3.75rem;
+  }
+
+  .privacy-container {
+    padding: 0 1.25rem;
+  }
+
+  .privacy-title {
+    font-size: 2.25rem;
+    margin-bottom: 3.75rem;
+  }
+
+  .privacy-body p,
+  .privacy-body ul {
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  .privacy-date {
+    font-size: 0.8125rem;
+  }
+
+  .privacy-section {
+    gap: 0.625rem;
+  }
+
+  .privacy-section-title {
+    font-size: 1rem;
+  }
+
+  .privacy-contact {
+    margin-top: 3.75rem;
+    padding: 0 0 2.5rem 0;
+  }
+}
+
+@media (max-width: 30rem) {
+  .privacy-main {
+    padding: 3.75rem 0 2.5rem;
+  }
+
+  .privacy-title {
+    font-size: 1.75rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .privacy-container {
+    padding: 0 1rem;
+  }
+
+  .privacy-body {
+    gap: 1.875rem;
+  }
+
+  .privacy-body p,
+  .privacy-body ul {
+    font-size: 0.8125rem;
+    text-align: left;
+  }
+}

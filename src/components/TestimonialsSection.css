@@ -1,0 +1,567 @@
+/* ============================================
+   TESTIMONIALS SECTION - RESPONSIVE CAROUSEL
+   Fully responsive with proper positioning
+   ============================================ */
+
+.testimonials-section {
+  width: 100%;
+  padding: var(--spacing-4xl) var(--spacing-md);
+  /* 80px 16px */
+  position: relative;
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ambient glow effects */
+.ambient-glow {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Center glow spot */
+.glow-spot-center {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75rem;
+  /* 1200px */
+  height: 50rem;
+  /* 800px */
+  background: radial-gradient(circle, rgba(25, 25, 25, 0.5) 0%, rgba(0, 0, 0, 0) 70%);
+  filter: blur(5rem);
+  /* 80px */
+  opacity: 0.5;
+}
+
+/* Right gradient circle */
+.gradient-circle-right {
+  position: absolute;
+  top: -12.5rem;
+  /* -200px */
+  right: -12.5rem;
+  width: 43.75rem;
+  /* 700px */
+  height: 43.75rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, #00c47b 0%, #02322a 100%);
+  filter: blur(6.25rem);
+  /* 100px */
+  opacity: 0.7;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Main container */
+.testimonials-container {
+  width: 100%;
+  max-width: var(--container-xl);
+  /* 1280px */
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-4xl) var(--spacing-md);
+  /* 80px 16px */
+}
+
+/* Header section */
+.testimonials-header {
+  margin-bottom: var(--spacing-4xl);
+  /* 80px */
+  text-align: center;
+  max-width: 48rem;
+  /* 768px */
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 10;
+}
+
+@media (min-width: 48rem) {
+
+  /* 768px */
+  .testimonials-header {
+    margin-bottom: 7rem;
+    /* 112px */
+  }
+}
+
+/* Main title - fluid typography */
+.testimonials-title {
+  font-family: "Stage Grotesk", sans-serif;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--text-white);
+  margin: 0;
+}
+
+/* Line break control */
+.testimonials-title-break {
+  display: none;
+}
+
+@media (min-width: 48rem) {
+
+  /* 768px */
+  .testimonials-title-break {
+    display: block;
+  }
+}
+
+/* Carousel container */
+.testimonials-carousel {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 31.25rem;
+  /* 500px */
+}
+
+@media (min-width: 48rem) {
+
+  /* 768px */
+  .testimonials-carousel {
+    height: 25rem;
+    /* 400px */
+  }
+}
+
+/* Card base positioning */
+.testimonial-card {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.testimonial-card .glowing-effect-overlay {
+  z-index: 1;
+}
+.testimonial-card .glowing-effect-overlay .glow::after {
+  opacity: max(0.4, var(--active, 0.4)) !important;
+  transition: opacity 0.35s ease;
+}
+
+/* Side cards (blurred background cards) */
+.testimonial-card-side {
+  width: 25rem;
+  /* 400px */
+  opacity: 0.3;
+  transform: translateY(-50%) scale(0.85);
+  filter: none;
+  /* 2px */
+  pointer-events: none;
+  user-select: none;
+  display: none;
+}
+
+@media (min-width: 64rem) {
+
+  /* 1024px */
+  .testimonial-card-side {
+    display: block;
+  }
+}
+
+/* CRITICAL: Mobile override - show side cards on smaller screens */
+@media (max-width: 40rem) {
+  .testimonial-card-side {
+    display: block !important;
+  }
+}
+
+/* Left side card positioning */
+.testimonial-card-left {
+  left: 0;
+}
+
+@media (min-width: 80rem) {
+
+  /* 1280px */
+  .testimonial-card-left {
+    left: var(--spacing-2xl);
+    /* 48px */
+  }
+}
+
+/* Right side card positioning */
+.testimonial-card-right {
+  right: 0;
+}
+
+@media (min-width: 80rem) {
+
+  /* 1280px */
+  .testimonial-card-right {
+    right: var(--spacing-2xl);
+    /* 48px */
+  }
+}
+
+/* Active (center) card */
+.testimonial-card-active {
+  position: relative;
+  z-index: 20;
+  width: 100%;
+  max-width: 32.0625rem;
+  /* 513px */
+  transform: translateY(-50%);
+  transition: transform 0.5s ease;
+}
+
+.testimonial-card-active:hover {
+  transform: translateY(-50%) scale(1.01);
+}
+
+/* Card backdrop shadow */
+.testimonial-card-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  filter: blur(2.5rem);
+  /* 40px */
+  border-radius: 9999px;
+  opacity: 0.5;
+  z-index: -10;
+}
+
+/* Card inner content */
+.testimonial-card-inner {
+  position: relative;
+  background: #0C0C0C;
+  /* Updated to match Figma */
+  border-radius: 0.5rem;
+  /* 8px - Matches Figma */
+  padding: var(--spacing-xl);
+  /* 32px */
+  min-height: 19.125rem;
+  /* 306px */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  backdrop-filter: blur(0.25rem);
+  /* 4px */
+  box-shadow: 0 1.5625rem 3.125rem -0.75rem rgba(0, 0, 0, 0.25);
+  /* 25px 50px -12px */
+}
+
+.testimonial-card-inner::before {
+  content: "";
+  position: absolute;
+  inset: -0.0625rem;
+  border-radius: 0.55rem;
+  padding: 0.0625rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.05) 40%, rgba(0, 0, 0, 0.8) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@media (min-width: 48rem) {
+
+  /* 768px */
+  .testimonial-card-inner {
+    padding: var(--spacing-xl);
+    /* 40px */
+  }
+}
+
+/* Side card styling */
+.testimonial-card-side .testimonial-card-inner {
+  height: 15rem;
+  /* 240px */
+  padding: var(--spacing-xl);
+  /* 32px */
+  background: rgba(12, 12, 12, 0.4);
+  /* Slightly transparent for side cards */
+}
+
+/* Quote section */
+.testimonial-quote {
+  margin-bottom: var(--spacing-xl);
+  /* 32px */
+}
+
+/* Testimonial text */
+.testimonial-text {
+  font-family: "Stage Grotesk", sans-serif;
+  font-size: 1rem;
+  /* 16px - Updated to match Figma */
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color: var(--text-white);
+  margin: 0;
+}
+
+/* Side card text - truncated */
+.testimonial-card-side .testimonial-text {
+  font-size: 0.875rem;
+  /* 14px */
+  line-height: 1.625;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Author section */
+.testimonial-author {
+  margin-top: auto;
+}
+
+/* Author name - side cards */
+.testimonial-author-name {
+  font-family: "Stage Grotesk", sans-serif;
+  font-size: 1.125rem;
+  /* 18px */
+  font-weight: 500;
+  color: #41F33B;
+  /* Updated accent green */
+  margin: 0 0 0.125rem 0;
+  /* 2px */
+}
+
+/* Author name - active card */
+.testimonial-author-name-active {
+  font-family: "Stage Grotesk", sans-serif;
+  font-size: clamp(1.25rem, 2vw, 1.625rem);
+  /* 20px to 26px fluid */
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: #41F33B;
+  /* Updated accent green */
+  margin: 0 0 0.25rem 0;
+  /* 4px */
+}
+
+/* Author role - side cards */
+.testimonial-author-role {
+  font-family: "Stage Grotesk", sans-serif;
+  font-size: var(--font-size-xs);
+  /* 10px */
+  font-weight: 300;
+  color: var(--text-gray);
+  line-height: 1.25;
+  margin: 0;
+}
+
+/* Author role - active card */
+.testimonial-author-role-active {
+  font-family: "Stage Grotesk", sans-serif;
+  font-size: 0.875rem;
+  /* 14px */
+  font-weight: 300;
+  color: var(--text-gray);
+  letter-spacing: normal;
+  text-transform: none;
+  line-height: 1.25;
+  opacity: 1;
+  margin: 0;
+}
+
+/* Pagination dots */
+.testimonials-pagination {
+  margin-top: var(--spacing-3xl);
+  /* 64px */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  /* 8px */
+}
+
+/* Pagination indicator */
+.pagination-indicator {
+  height: 0.1825rem;
+  /* approx 2.92px */
+  width: 4.19rem;
+  /* approx 67.08px */
+  border-radius: 0.08rem;
+  /* 1.28px */
+  background: #1B2823;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+@media (min-width: 48rem) {
+
+  /* 768px */
+  .pagination-indicator {
+    width: 4.19rem;
+    /* 67.08px */
+  }
+}
+
+.pagination-indicator:hover {
+  background: #2A3F35;
+}
+
+/* Active pagination indicator */
+.pagination-indicator-active {
+  position: relative;
+  background: #41F33B;
+  /* Active color */
+  opacity: 1;
+}
+
+.pagination-indicator-active::before {
+  display: none;
+}
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS - TESTIMONIALS
+   ============================================ */
+
+/* Mobile devices (≤640px) */
+@media (max-width: 40rem) {
+
+  /* 640px */
+  .testimonials-section {
+    padding: var(--spacing-2xl) var(--spacing-md);
+    /* 48px 16px */
+    overflow-x: visible;
+    /* Allow side cards to show */
+  }
+
+  .testimonials-container {
+    padding: var(--spacing-2xl) var(--spacing-md);
+    /* 48px 16px */
+    overflow-x: visible;
+    /* Ensure side cards are not clipped */
+  }
+
+  .testimonials-header {
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .testimonials-title {
+    font-size: 2.25rem;
+  }
+
+  .testimonials-carousel {
+    height: auto;
+    min-height: 21.875rem;
+    /* 350px */
+    overflow: visible;
+    /* Allow side cards to show */
+    position: relative;
+  }
+
+  .testimonial-card-active {
+    position: relative;
+    transform: none;
+    top: auto;
+    width: 75%;
+    /* Slightly narrower to show more of sides */
+    margin: 0 auto;
+    z-index: 20;
+  }
+
+  .testimonial-card-active:hover {
+    transform: scale(1.01);
+  }
+
+  /* Show side cards on mobile - desktop-like carousel */
+  .testimonial-card-side {
+    display: block !important;
+    /* Force show */
+    width: 75%;
+    opacity: 1;
+    /* Full opacity, blur will provide the effect */
+    z-index: 1;
+    top: 50%;
+    position: absolute;
+    transform: translateY(-50%) scale(0.8);
+    filter: blur(2px);
+    /* Add blur effect */
+    pointer-events: auto;
+    /* Allow clicking */
+    cursor: pointer;
+  }
+
+  .testimonial-card-left {
+    left: -40%;
+    /* Adjusted for better visibility */
+  }
+
+  .testimonial-card-right {
+    right: -40%;
+    /* Adjusted for better visibility */
+  }
+
+  .testimonial-card-inner {
+    padding: var(--spacing-lg);
+    /* 24px */
+    min-height: auto;
+  }
+
+  .testimonials-pagination {
+    margin-top: var(--spacing-2xl);
+    /* 48px */
+  }
+
+  .gradient-circle-right {
+    width: 31.25rem;
+    /* 500px */
+    height: 31.25rem;
+    top: -6.25rem;
+    /* -100px */
+    right: -6.25rem;
+  }
+}
+
+/* Tablets (641px to 1024px) */
+@media (min-width: 40.0625rem) and (max-width: 64rem) {
+
+  /* 641px - 1024px */
+  .testimonials-carousel {
+    height: auto;
+    min-height: 25rem;
+    /* 400px */
+  }
+
+  .testimonial-card-active {
+    position: relative;
+    transform: none;
+    top: auto;
+  }
+
+  .testimonial-card-active:hover {
+    transform: scale(1.01);
+  }
+}
+
+/* Small laptops (≤1366px) */
+@media (max-width: 85.375rem) {
+
+  /* 1366px */
+  .testimonials-container {
+    max-width: 75rem;
+    /* 1200px */
+  }
+}
+
+/* Mobile horizontal padding */
+@media (max-width: 48rem) {
+  .testimonials-section {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+/* Large screens media query removed */
